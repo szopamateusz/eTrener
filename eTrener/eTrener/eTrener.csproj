@@ -118,10 +118,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="JS\jquery.cbpFWSlider.min.js" />
+    <Content Include="JS\jquery.min.js" />
+    <Content Include="JS\modernizr.custom.js" />
+    <Content Include="JS\owl.carousel.js" />
+    <Content Include="JS\wow.min.js" />
+    <Content Include="Photos\banner.jpg" />
+    <Content Include="Photos\slide2.png" />
+    <Content Include="Photos\slide3.png" />
+    <Content Include="Photos\slide4.png" />
+    <Content Include="Styles\animate.css" />
+    <Content Include="Styles\bootstrap.css" />
+    <Content Include="Styles\component.css" />
+    <Content Include="Styles\owl.carousel.css" />
+    <Content Include="Styles\style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -133,6 +148,10 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Oferta.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Rejestracja.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -142,7 +161,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
