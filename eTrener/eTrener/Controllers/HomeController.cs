@@ -13,7 +13,7 @@ namespace eTrener.Controllers
         {
             return View();
         }
-        public ActionResult StronyHTML(string nazwa)
+        public ActionResult MainPage(string nazwa)
         {
             return View(nazwa);
         }

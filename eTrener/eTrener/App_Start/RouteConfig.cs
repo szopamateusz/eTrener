@@ -14,11 +14,16 @@ namespace eTrener
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
           routes.MapRoute(
-          name: "StronyHTML",
+          name: "MainPage",
           url: "{nazwa}.html",
-          defaults: new { controller = "Home", action = "StronyHTML" }
+          defaults: new { controller = "Home", action = "MainPage" }
           );
 
+            routes.MapRoute(
+         name: "AccountPage",
+         url: "{controller}/{nazwa}.html",
+         defaults: new { controller = "Account", action = "AccountPage" }
+         );
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
