@@ -28,8 +28,30 @@ namespace eTrener.Controllers
         {
             return View();
         }
-     
-            private ApplicationSignInManager _signInManager;
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> UserData(UserData userData)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+                user.UserData = userData;
+
+                var result = await UserManager.UpdateAsync(user);
+               
+                AddErrors(result);
+            }
+
+            if (!ModelState.IsValid)
+            {
+                TempData["ViewData"] = ViewData;
+                return RedirectToAction("UserData");
+            }
+
+            return RedirectToAction("Profile");
+        }
+        private ApplicationSignInManager _signInManager;
             private ApplicationUserManager _userManager;
 
             public AdminController()

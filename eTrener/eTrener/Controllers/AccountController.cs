@@ -115,7 +115,7 @@ namespace eTrener.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new IdentityModels.ApplicationUser { UserName = model.Email, Email = model.Email, userData = new UserData() };
+                var user = new IdentityModels.ApplicationUser { UserName = model.Email, Email = model.Email, UserData = new UserData() };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
