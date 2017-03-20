@@ -72,3 +72,4 @@ C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\Microsoft.Owin.Host.Syst
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.csprojResolveAssemblyReference.cache
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.Migrations.InitialCreate.resources
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.csproj.GenerateResource.Cache
+C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.Migrations.zmianauserdata.resources
