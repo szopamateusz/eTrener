@@ -17,7 +17,10 @@ namespace eTrener.Controllers
     {
         private ApplicationUserManager _userManager;
         private ApplicationSignInManager _signInManager;
-
+        public ActionResult Dashboard(string name)
+        {
+            return View(name);
+        }
 
         public ActionResult AccountPage(string name)
         {

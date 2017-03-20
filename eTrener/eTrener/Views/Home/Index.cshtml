@@ -25,18 +25,44 @@
             <div>
                 <div class="container">
                     <div class="logo">
-                        <a href="@Url.Action("MainPage", "Home", new {nazwa = "Index"})"><h1>e<span>Trener</span></h1></a>
+                        <a href="@Url.Action("Index", "Home")"><h1>e<span>Trener</span></h1></a>
                     </div>
                     <span class="menu"> </span>
                     <div class="top-menu">
                         <nav class="navigation">
-                            <ul >
+                            <ul>
                                 
-                                <li><a href="@Url.Action("MainPage", "Home", new {nazwa = "Index"})">Strona główna</a></li>
-                                <li><a href="@Url.Action("MainPage", "Home", new {nazwa = "Oferta"})">Oferta</a></li>
-                                @Html.Partial("_LoginPartial");
-                                <li><a href="@Url.Action("AccountPage", "Account", new {nazwa = "Login"})">Login</a></li>
-                                <li><a href="@Url.Action("AccountPage", "Account", new {nazwa = "Register"})">Rejestracja</a></li>
+                                <li><a href="@Url.Action("Index", "Home")"> Strona główna</a></li>
+                                <li><a href="@Url.Action("Index", "Home")"> Oferta</a></li>
+                                <li>@Html.ActionLink("Rej", "Dashboard", "Account")</li>
+                                @using Microsoft.AspNet.Identity
+                                
+                                <li><div id="login-header">
+                                        @if (Request.IsAuthenticated)
+                                        {
+                                            using (Html.BeginForm("Logoff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                                            {
+                                                @Html.AntiForgeryToken()
+
+                                                <div>
+                                                    @Html.ActionLink(User.Identity.GetUserName(), "Dashboard", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
+                                                </div>
+                                                <div>
+                                                    <a href="javascript:document.getElementById('logoutForm').submit()">Wyloguj</a>
+                                                </div>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <div>
+                                                @Html.ActionLink("Rejestracja", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
+                                            </div>
+                                            <div>
+                                                @Html.ActionLink("Zaloguj", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+                                            </div>
+                                        }
+                                    </div>
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -114,7 +140,7 @@
 									});
 								});
     </script>
-    <script type="text/javascript">
+    <script type="text/javascript"> 
 									$(document).ready(function() {
 										
 										$().UItoTop({ easingType: 'easeOutQuart' });

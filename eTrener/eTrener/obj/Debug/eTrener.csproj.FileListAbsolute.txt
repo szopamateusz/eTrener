@@ -44,11 +44,9 @@ C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\System.Web.Mvc.xml
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.dll
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.pdb
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\Antlr3.Runtime.dll
-C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\Newtonsoft.Json.dll
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\System.Web.Optimization.dll
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\WebGrease.dll
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\Antlr3.Runtime.pdb
-C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\Newtonsoft.Json.xml
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\System.Web.Optimization.xml
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\EntityFramework.dll
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\EntityFramework.SqlServer.dll
@@ -72,3 +70,5 @@ C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\Microsoft.Owin.Security.
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\Microsoft.Owin.Host.SystemWeb.dll
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\Microsoft.Owin.Host.SystemWeb.xml
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.csprojResolveAssemblyReference.cache
+C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.Migrations.InitialCreate.resources
+C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.csproj.GenerateResource.Cache
