@@ -974,6 +974,7 @@
     <Content Include="DashboardStyles\plugins\timepicker\js\bootstrap-timepicker.js" />
     <Content Include="DashboardStyles\plugins\timepicker\js\bootstrap-timepicker.min.js" />
     <Content Include="Global.asax" />
+    <Content Include="Images\account.jpeg" />
     <Content Include="JS\Acc\Login.js" />
     <Content Include="JS\Acc\Register.js" />
     <Content Include="JS\jquery.cbpFWSlider.min.js" />
@@ -996,6 +997,7 @@
     <Content Include="Styles\animate.css" />
     <Content Include="Styles\bootstrap.css" />
     <Content Include="Styles\component.css" />
+    <Content Include="Styles\Letter.css" />
     <Content Include="Styles\owl.carousel.css" />
     <Content Include="Styles\style.css" />
     <Content Include="Web.config" />
@@ -1006,6 +1008,7 @@
     <Compile Include="App_Start\Statup.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CalculatorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\eTrenerContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -1021,6 +1024,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModel.cs" />
+    <Compile Include="Models\CalculatorVM.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ProfileSettingsModel.cs" />
     <Compile Include="Models\UserData.cs" />
@@ -1081,6 +1085,11 @@
     <Content Include="Views\Admin\ChangePassword.cshtml" />
     <Content Include="Views\Admin\Profile.cshtml" />
     <Content Include="Views\Admin\UserData.cshtml" />
+    <Content Include="Views\Calculators\BMI.cshtml" />
+    <Content Include="Views\Calculators\WHR.cshtml" />
+    <Content Include="Views\Calculators\SBW.cshtml" />
+    <Content Include="Views\Calculators\BM.cshtml" />
+    <Content Include="Views\Calculators\PBF.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -37,7 +37,6 @@ namespace eTrener.Controllers
             {
                 var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
                 user.UserData = userData;
-
                 var result = await UserManager.UpdateAsync(user);
                
                 AddErrors(result);
@@ -102,7 +101,7 @@ namespace eTrener.Controllers
                 var userId = User.Identity.GetUserId();
                 var model = new IndexViewModel
                 {
-                    HasPassword = HasPassword(),
+                  
                     PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
                     TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
                     Logins = await UserManager.GetLoginsAsync(userId),
@@ -263,28 +262,28 @@ namespace eTrener.Controllers
                 return View();
             }
 
-            [HttpPost]
-            [ValidateAntiForgeryToken]
-            public async Task<ActionResult> SetPassword(SetPasswordViewModel model)
-            {
-                if (ModelState.IsValid)
-                {
-                    var result = await UserManager.AddPasswordAsync(User.Identity.GetUserId(), model.NewPassword);
-                    if (result.Succeeded)
-                    {
-                        var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
-                        if (user != null)
-                        {
-                            await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-                        }
-                        return RedirectToAction("Index", new { Message = ManageMessageId.SetPasswordSuccess });
-                    }
-                    AddErrors(result);
-                }
-
-                // If we got this far, something failed, redisplay form
-                return View(model);
-            }
+//            [HttpPost]
+//            [ValidateAntiForgeryToken]
+//            public async Task<ActionResult> SetPassword(SetPasswordViewModel model)
+//            {
+//                if (ModelState.IsValid)
+//                {
+//                    var result = await UserManager.AddPasswordAsync(User.Identity.GetUserId(), model.NewPassword);
+//                    if (result.Succeeded)
+//                    {
+//                        var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+//                        if (user != null)
+//                        {
+//                            await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+//                        }
+//                        return RedirectToAction("Index", new { Message = ManageMessageId.SetPasswordSuccess });
+//                    }
+//                    AddErrors(result);
+//                }
+//
+//                // If we got this far, something failed, redisplay form
+//                return View(model);
+//            }
 
 //            public async Task<ActionResult> ManageLogins(ManageMessageId? message)
 //            {
@@ -357,15 +356,15 @@ namespace eTrener.Controllers
                 }
             }
 
-            private bool HasPassword()
-            {
-                var user = UserManager.FindById(User.Identity.GetUserId());
-                if (user != null)
-                {
-                    return user.PasswordHash != null;
-                }
-                return false;
-            }
+//            private bool HasPassword()
+//            {
+//                var user = UserManager.FindById(User.Identity.GetUserId());
+//                if (user != null)
+//                {
+//                    return user.PasswordHash != null;
+//                }
+//                return false;
+//            }
 
 //            private bool HasPhoneNumber()
 //            {
@@ -376,7 +375,7 @@ namespace eTrener.Controllers
 //                }
 //                return false;
 //            }
-
+//
             public enum ManageMessageId
             {
                 AddPhoneSuccess,

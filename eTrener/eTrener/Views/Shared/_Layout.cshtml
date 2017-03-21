@@ -257,31 +257,34 @@
 </li>
 @*<li id="left-sidebar-menu-widgets">*@
 @*    <a href="@Url.Action("Index", "Home")">*@
-@*        <i class="fa fa-th"></i> <span>Widgets</span>*@
+@*        <i class="fa fa-th"></i> <span>Calculators</span>*@
 @*        <small class="label pull-right bg-green">new</small>*@
 @*    </a>*@
 @*</li>*@
-@*<li id="left-sidebar-menu-charts" class="treeview">*@
-@*    <a href="#">*@
-@*        <i class="fa fa-pie-chart"></i>*@
-@*        <span>Charts</span>*@
-@*        <i class="fa fa-angle-left pull-right"></i>*@
-@*    </a>*@
-@*    <ul class="treeview-menu">*@
-@*        <li id="left-sidebar-menu-charts-chartjs">*@
-@*            <a href="@Url.Action("Index", "Home")"><i class="fa fa-circle-o"></i> ChartJS</a>*@
-@*        </li>*@
-@*        <li id="left-sidebar-menu-charts-morris">*@
-@*            <a href="@Url.Action("Index", "Home")"><i class="fa fa-circle-o"></i> Morris</a>*@
-@*        </li>*@
-@*        <li id="left-sidebar-menu-charts-flot">*@
-@*            <a href="@Url.Action("Index", "Home")"><i class="fa fa-circle-o"></i> Flot</a>*@
-@*        </li>*@
-@*        <li id="left-sidebar-menu-charts-inline">*@
-@*            <a href="@Url.Action("Index", "Home")"><i class="fa fa-circle-o"></i> Inline charts</a>*@
-@*        </li>*@
-@*    </ul>*@
-@*</li>*@
+<li id="left-sidebar-menu-charts" class="treeview">
+    <a href="#">
+        <i class="fa fa-calculator"></i>
+        <span>Calculators</span>
+        <i class="fa fa-angle-left pull-right"></i>
+    </a>
+    <ul class="treeview-menu">
+        <li id="left-sidebar-menu-charts-BMI">
+            <a href="@Url.Action("BMI", "Calculators")"><i class="fa fa-heartbeat"></i> BMI Calculator</a>
+        </li>
+        <li id="left-sidebar-menu-charts-WHR">
+            <a href="@Url.Action("WHR", "Calculators")"><i class="fa fa-heartbeat"></i> WHR  Calculator</a>
+        </li>
+        <li id="left-sidebar-menu-charts-SBW">
+            <a href="@Url.Action("SBW", "Calculators")"><i class="fa fa-heartbeat"></i> Should Body Weight</a>
+        </li>
+        <li id="left-sidebar-menu-charts-BM">
+            <a href="@Url.Action("BM", "Calculators")"><i class="fa fa-heartbeat"></i> Basic Metabolism</a>
+        </li>
+        <li id="left-sidebar-menu-charts-PBF">
+            <a href="@Url.Action("PBF", "Calculators")"><i class="fa fa-heartbeat"></i> Percentage Body Fat</a>
+        </li>
+    </ul>
+</li>
 @*<li id="left-sidebar-menu-elements" class="treeview">*@
 @*    <a href="#">*@
 @*        <i class="fa fa-laptop"></i>*@
