@@ -1,8 +1,75 @@
-﻿
+﻿@model eTrener.Models.SBWViewModel
+
 @{
     ViewBag.Title = "SBW";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>SBW</h2>
 
+<link href="~/Styles/Letter.css" rel="stylesheet" type="text/css" />
+<div class="paper">
+    <p class="paper">
+        Should body weight is the weight of the body we should have due to height, gender, age and type of building. 
+        The size of the body weight can be read from the special tables or calculated using the formula; 
+        From the growth in centimeters, subtract 100 (with the increase to 164 cm), with the increase within the limits -
+        164 cm to 174 cm, subtract 105, with the increase over 174 cm, subtract 110. The obtained values ​​do not take into 
+        account differences in the type of body construction, Medium or stocky. Body weight can be determined by calculating 
+        body mass index - BMI by formula; BMI = m / h2 (m - body weight in kilograms, h - body height in meters). For proper 
+        body weight, the BMI is 18.5 to 24.9. Value below 18.5 means underweight, over 25 to overweight, over 30 obesity, over 
+        40 obesity in the third grade. Calculation of weight gain is related to the calculation of body fat percentage in total 
+        body weight. For women this should be between 18 and 22%. Below 16% of body fat is too small and over 30% is too large. 
+        Measurement of adipose tissue is done by means of a device called a caliper, by weighing under water or by electrical 
+        conductivity measurements.
+    </p>
+    <div class="letter">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-primary">
+
+                    @using (Html.BeginForm("SBW", "Calculators", FormMethod.Post, new {role = "form"}))
+                    {
+                        <div class="box-body">
+                            <div class="form-group">
+                                @Html.Label("Height [cm]", new {@class = "col-md-6 control-label"})
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.Height, new {@class = "form-control"})
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.Label("Sex", new {@class = "col-md-4 control-label"})
+                                <div class="col-md-10">
+                                    @Html.DropDownListFor(m => m.Sex,
+                                        new List<SelectListItem>
+                                        {
+                                            new SelectListItem {Value = "Male", Text = "Male"},
+                                            new SelectListItem {Value = "Female", Text = "Female"}
+                                        },
+                                        new
+                                        {
+                                            size = "1",
+                                            style = "width: 140px"
+                                        })
+                                </div>
+                            </div>
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        @ViewBag.result
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <br/>
+                                    <input type="submit" value="Calculate" class="btn btn-default"/>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
