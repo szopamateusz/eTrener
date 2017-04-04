@@ -76,6 +76,27 @@ namespace eTrener.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult PBF(PBFViewModel model)
+        {
+            double weight = model.Weight;
+            double waist = model.Waist;
+            string sex = model.Sex;
+            double manPBF = ((1.634 * waist - 0.1804 * weight - 98.42) / 2.2 * weight) * 100;
+            double womanPBF = ((1.634 * waist - 0.1804 * weight - 76.76) / 2.2 * weight)*100;
+            if (sex.Equals("Male"))
+            {
+                ViewBag.result = string.Format("The body fat is about {0} %", manPBF);
+            }
+            else
+            {
+                ViewBag.result = string.Format("The body fat is about {0} %", womanPBF);
+
+            }
+
+            return View();
+        }
+
         public ActionResult SBW()
         {
             return View();

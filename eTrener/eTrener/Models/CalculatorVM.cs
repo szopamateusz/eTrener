@@ -32,4 +32,11 @@ namespace eTrener.Models
         public int Age { get; set; }
         public string Sex { get; set; }
     }
+
+    public class PBFViewModel
+    {
+        public string Sex { get; set; }
+        public double Waist { get; set; }
+        public double Weight { get; set; }
+    }
 }
