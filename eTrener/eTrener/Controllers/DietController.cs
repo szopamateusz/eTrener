@@ -13,10 +13,7 @@ namespace eTrener.Controllers
     {
         private eTrenerContext db= new eTrenerContext();
         // GET: Diet
-        public ActionResult Index()
-        {
-            return View();
-        }
+    
         public ActionResult AddProduct()
         {
             return View();
@@ -32,16 +29,19 @@ namespace eTrener.Controllers
                 Name = model.Name,
                 Calories = model.Calories,
                 Protein = model.Protein,
-                Sugar = model.Sugar,
                 Carbs = model.Carbs,
-                Salt = model.Salt,
-                Fiber = model.Fiber,
-                Fat = model.Fat,
-                SaturatedFattyAcids = model.SaturatedFattyAcids
+                Fat = model.Fat
             };
             db.Products.Add(models);
             db.SaveChanges();
-            return View(model);
+            return RedirectToAction("AddProduct", "Diet");
         }
+        public ActionResult ProductList()
+        {
+            var list = db.Products.ToList();
+            return View(list);
+        }
+
     }
+
 }

@@ -10,13 +10,10 @@ namespace eTrener.Models
     {
         [Key]
         public int IngredientId { get; set; }
-        public string Name { get; set; }
-        public double Calories { get; set; }
-        public double Protein { get; set; }
-        public double Carbs { get; set; }
-        public double Fat { get; set; }
+        public int ProductId { get; set; }
         public double Weight { get; set; }
-        public virtual MealModel Meal { get; set; }
+
+        public virtual ProductModel Product { get; set; }
 
     }
 }

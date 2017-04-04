@@ -13,12 +13,7 @@ namespace eTrener.Models
         public string Name { get; set; }
         public double Calories { get; set; }
         public double Fat { get; set; }
-        public double SaturatedFattyAcids { get; set; }
         public double Carbs { get; set; }
-        public double Sugar { get; set; }
-        public double Fiber { get; set; }
         public double Protein { get; set; }
-        public double Salt { get; set; }
-      //  public virtual  MealModel   Meal { get; set; }
     }
 }
