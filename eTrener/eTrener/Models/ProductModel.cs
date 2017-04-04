@@ -19,6 +19,6 @@ namespace eTrener.Models
         public double Fiber { get; set; }
         public double Protein { get; set; }
         public double Salt { get; set; }
-        public virtual  MealModel   Meal { get; set; }
+      //  public virtual  MealModel   Meal { get; set; }
     }
 }

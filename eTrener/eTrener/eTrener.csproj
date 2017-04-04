@@ -1009,6 +1009,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CalculatorsController.cs" />
+    <Compile Include="Controllers\DietController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\eTrenerContext.cs" />
     <Compile Include="DAL\eTrenerInitializer.cs" />
@@ -1023,11 +1024,24 @@
     <Compile Include="Migrations\201704041321056_add new tables.Designer.cs">
       <DependentUpon>201704041321056_add new tables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704041429052_add ingredient.cs" />
+    <Compile Include="Migrations\201704041429052_add ingredient.Designer.cs">
+      <DependentUpon>201704041429052_add ingredient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704041438251_add ingredient 3.cs" />
+    <Compile Include="Migrations\201704041438251_add ingredient 3.Designer.cs">
+      <DependentUpon>201704041438251_add ingredient 3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704041549418_dell properties.cs" />
+    <Compile Include="Migrations\201704041549418_dell properties.Designer.cs">
+      <DependentUpon>201704041549418_dell properties.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModel.cs" />
     <Compile Include="Models\CalculatorVM.cs" />
     <Compile Include="Models\DietModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IngredientModel.cs" />
     <Compile Include="Models\MealModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Models\ProfileSettingsModel.cs" />
@@ -1094,6 +1108,7 @@
     <Content Include="Views\Calculators\SBW.cshtml" />
     <Content Include="Views\Calculators\BM.cshtml" />
     <Content Include="Views\Calculators\PBF.cshtml" />
+    <Content Include="Views\Diet\AddProduct.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1111,6 +1126,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704041321056_add new tables.resx">
       <DependentUpon>201704041321056_add new tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704041429052_add ingredient.resx">
+      <DependentUpon>201704041429052_add ingredient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704041438251_add ingredient 3.resx">
+      <DependentUpon>201704041438251_add ingredient 3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704041549418_dell properties.resx">
+      <DependentUpon>201704041549418_dell properties.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

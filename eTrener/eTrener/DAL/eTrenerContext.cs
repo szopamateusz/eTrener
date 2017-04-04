@@ -29,7 +29,7 @@ namespace eTrener.DAL
         public DbSet<MealModel> Meals { get; set; }
         public DbSet<DietModel> Diets { get; set; }
         public DbSet<ProductModel> Products { get; set; }
-
+        public DbSet<IngredientModel> Ingredients { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
