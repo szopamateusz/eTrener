@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using Microsoft.Owin.Security;
 
 namespace eTrener.Models
 {
@@ -10,10 +11,10 @@ namespace eTrener.Models
     {
         [Key]
         public int IngredientId { get; set; }
-        public int ProductId { get; set; }
-        public double Weight { get; set; }
-
-        public virtual ProductModel Product { get; set; }
-
+        public ProductModel Model { get; set; }
+        public decimal Weight { get; set; }
+        public string Units { get; set; }
+        public string Meal { get; set; }
+        
     }
 }

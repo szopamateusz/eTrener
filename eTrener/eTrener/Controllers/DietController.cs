@@ -12,8 +12,17 @@ namespace eTrener.Controllers
 {
     public class DietController : Controller
     {
-        private eTrenerContext db = new eTrenerContext();
-        // GET: Diet
+       
+        private eTrenerContext db;
+        private ISessionMenager SessionMenager { get; set; }
+        private AddMealMenager mealMenager;
+
+        public DietController(eTrenerContext context, ISessionMenager sessionMenager)
+        {
+            this.db = context;
+            this.SessionMenager = sessionMenager;
+            mealMenager = new AddMealMenager(sessionMenager, db);
+        }
 
         public ActionResult AddProduct()
         {
@@ -61,8 +70,8 @@ namespace eTrener.Controllers
 
         public ActionResult CreateDiet()
         {
-            var list = db.Products.ToList();
-            return View(list);
+            var meal = mealMenager.DownloadIngredient();
+            return View(meal);
         }
 
         public ActionResult ProductHints(string term)
@@ -72,6 +81,37 @@ namespace eTrener.Controllers
                     .Take(5)
                     .Select(a => new {label = a.Name});
             return Json(productList, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult select_food(string searchQuery = null)
+        {
+            List<ProductModel> productList;
+            //  ICacheProvider cache = new CacheProvider();
+            //   if (cache.IsSet(Consts.ProductList))
+            //   {
+            //       productList = cache.Get(Consts.ProductList) as List<ProductModel>;
+            //    }
+            //    else
+            //{
+            productList = db.Products.Where(a => (searchQuery == null
+            || a.Name.ToLower().Contains(searchQuery.ToLower())
+            )).ToList();
+            //      cache.Set(Consts.ProductList, productList, 10);
+            //    }
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_Products", productList);
+            }
+            return View(productList);
+
+            return View(productList);
+        }
+
+
+        public ActionResult AddMeal(int id, decimal weight, string units, string meal)
+        {
+            mealMenager.AddMeal(id,weight,units,meal);
+            return RedirectToAction("CreateDiet");
         }
     }
 }

@@ -2,6 +2,9 @@
     ViewBag.Title = "CreateDiet";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@using eTrener.Infrastructure
+@model eTrener.Models.CreateDietModel
+
 <link href="~/Styles/diet.css" rel="stylesheet" type="text/css" />
 
 <table class="table0 " id="diary-table">
@@ -53,16 +56,17 @@
         <tr class="bottom">
 
 
-            @foreach (var position in Model)
+            @foreach (var position in Model.IngredientModels)
             {
-            <tr class="first alt">
-                <td>@position.Name</td>
-                <td>@position.Calories</td>
-                <td>@position.Fat</td>
-                <td>@position.Carbs</td>
-                <td>@position.Protein</td>
-                <td><a class="ion-android-delete" data-id="@position.ProductId" href="#">Delete</a></td>
-            </tr>
+                <tr class="first alt">
+               
+                    <td>@position.Model.Name</td>
+                    <td>@position.Model.Calories</td>
+                    <td>@position.Model.Fat</td>
+                    <td>@position.Model.Carbs</td>
+                    <td>@position.Model.Protein</td>
+                    <td><a class="ion-android-delete" data-id="@position.Model.ProductId" href="#">Delete</a></td>
+                </tr>
             }
         <td class="first alt" style="z-index: 10">
 

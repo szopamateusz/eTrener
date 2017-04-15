@@ -12,6 +12,6 @@ namespace eTrener.Models
         public int DietId { get; set; }
         public string UserId { get; set; }
         public virtual IdentityModels.ApplicationUser User { get; set; }
-        public List<MealModel> Meal { get; set; }
+        public List<IngredientModel> Ingredient{ get; set; }
     }
 }
