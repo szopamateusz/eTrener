@@ -13,7 +13,6 @@ namespace eTrener.Models
         public int IngredientId { get; set; }
         public ProductModel Model { get; set; }
         public decimal Weight { get; set; }
-        public string Units { get; set; }
         public string Meal { get; set; }
         
     }

@@ -33,8 +33,8 @@ namespace eTrener.Infrastructure
 
             return ingredient;
         }
-
-        public void AddMeal(int productId, decimal weight, string units, string meal)
+       // , decimal weight, string units, string meal
+        public void AddMeal(int productId, decimal weight, string meal)
         {
             var ingredient = DownloadIngredient();
             var addingMeal = db.Products.Where(k => k.ProductId == productId).SingleOrDefault();
@@ -44,7 +44,6 @@ namespace eTrener.Infrastructure
                 {
                     Model = addingMeal,
                     Weight = weight,
-                    Units = units,
                     Meal = meal
                 };
                 ingredient.Add(newMeal);
@@ -53,7 +52,7 @@ namespace eTrener.Infrastructure
             session.Set(Consts.MealKey, ingredient);
         }
 
-        public int UsunZKoszyka(int productId)
+        public int DeleteFromDiet(int productId)
         {
             var ingredient = DownloadIngredient();
             var dellMeal = ingredient.Find(k => k.Model.ProductId == productId);

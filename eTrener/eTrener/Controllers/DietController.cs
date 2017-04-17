@@ -70,8 +70,13 @@ namespace eTrener.Controllers
 
         public ActionResult CreateDiet()
         {
+
             var meal = mealMenager.DownloadIngredient();
-            return View(meal);
+            CreateDietModel model = new CreateDietModel()
+            {
+                IngredientModels = meal
+            };
+            return View(model);
         }
 
         public ActionResult ProductHints(string term)
@@ -103,14 +108,25 @@ namespace eTrener.Controllers
                 return PartialView("_Products", productList);
             }
             return View(productList);
-
-            return View(productList);
+           
+        }
+        [HttpPost]
+        public ActionResult AddMeal(int id, SelectedFoodModel model)
+        {
+            decimal weight = model.Weight;
+            string meal = model.Meal;
+            mealMenager.AddMeal(id, weight, meal);
+            return RedirectToAction("CreateDiet");
         }
 
-
-        public ActionResult AddMeal(int id, decimal weight, string units, string meal)
+        public ActionResult AddMeal(int id)
         {
-            mealMenager.AddMeal(id,weight,units,meal);
+            return View();
+        }
+        public ActionResult DeleteFromDiet(int ID)
+        {
+            mealMenager.DeleteFromDiet(ID);
+
             return RedirectToAction("CreateDiet");
         }
     }

@@ -1,4 +1,6 @@
-﻿@using System.Web.WebPages.Instrumentation
+﻿
+@using System.Reflection.Emit
+@using System.Web.WebPages.Instrumentation
 @{
     ViewBag.Title = "select_food";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -24,9 +26,9 @@
     <ul id="matching">
         @foreach (var position in Model)
         {
-            <li class="matched-food" id= @position.ProductId.ToString(), meal=@position.Name >
-               
-                @position.Name
+            <li class="matched-food" id=@position.ProductId.ToString(), meal=@position.Name>
+
+                <a href="@Url.Action("AddMeal", "Diet", new { id =position.ProductId })">@position.Name</a> 
                 <p class="search-nutritional-info">
 
                     Calories: @position.Calories
@@ -41,65 +43,48 @@
     </ul>
 
 </div>
+@using (Html.BeginForm("select_food", "Diet", FormMethod.Post, new {role = "form"}))
+{
+        <div id="servings" class="col-1 block-1">
+            <div id="loaded_item">
+            
+                <p class="food-description">
+                    <label id="name"></label>
+                </p>
+                <div class="user_submitted"></div>
 
-<form accept-charset="UTF-8" action="/food/add" id="food-nutritional-details-form" method="post">
-    <div id="servings" class="col-1 block-1">
-        <div id="loaded_item">
-            <input id="food_entry_food_id" name="food_entry[food_id]" type="hidden" value="394962625">
-            <input id="food_entry_date" name="food_entry[date]" type="hidden" value="2017-04-15">
 
-            <p class="food-description"><label id="name">Some text field</label></p>
+                <p></p>
 
-            <div class="verified-food-container">
-                <div class="verified"></div>
-                <span class="verified-text verified-nutritional_info">
-                    <a href="http://myfitnesspal.desk.com/customer/portal/articles/1859089" target="_blank">Learn more</a>
-                </span>
+                <h3 class="secondary-title">How much?</h3>
+
+                <input id="food_entry_quantity" autocomplete="off" class="text short" name="food_entry[quantity]" size="30" type="text" value="1.0">
+                servings of 1 gram
+
+             
+                <p></p>
+                <p></p>
+                <h3 class="secondary-title">To which meal?</h3>
+                <select class="select" id="food_entry_meal_id" name="food_entry">
+                    <option value="0" selected="selected">
+                        Breakfast
+                    </option>
+                    <option value="1">
+                        Lunch
+                    </option>
+                    <option value="2">  
+                        Dinner
+                    </option>
+                    <option value="3">
+                        Snacks
+                    </option>
+                </select>
+
+                <p></p>
+@*                <a href="@Url.Action("select_food", "Diet", new { id = })">Add</a>*@
             </div>
-            <div class="user_submitted"></div>
-
-
-            <p></p>
-
-            <h3 class="secondary-title">How much?</h3>
-
-            <input id="food_entry_quantity" autocomplete="off" class="text short" name="food_entry[quantity]" size="30" type="text" value="1.0">
-            servings of
-
-            <select id="food_entry_weight_id" class="select" name="food_entry[weight_id]">
-                <option value="0">1 pieces</option>
-                <option value="1" selected="selected">1 gram</option>
-                <option value="2">100 gram</option>
-            </select>
-            <p></p>
-            <p></p>
-            <h3 class="secondary-title">To which meal?</h3>
-            <select class="select" id="food_entry_meal_id" name="food_entry[meal_id]">
-                <option value="0" selected="selected">
-                    Breakfast
-                </option>
-                <option value="1">
-                    Lunch
-                </option>
-                <option value="2">
-                    Dinner
-                </option>
-                <option value="3">
-                    Snacks
-                </option>
-            </select>
-
-            <p></p>
-
-            <input id="update_servings" type="submit" value="Add Food To Diary" class="button log" data-food-id="394962625" data-external-id="28483697766061" data-version-id="194215896042541">
-
         </div>
-
-        <div id="loading" style="display: none;">
-            <img alt="Ajax-loader" src="http://d34yn14tavczy0.cloudfront.net/assets/ajax-loader-50c838b217beb2ca865f50f9b4a3932d.gif">
-        </div>
-    </div>
-</form>
+}
 <script src="~/Scripts/jquery-3.1.1.js"></script>
 <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
 <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
@@ -113,7 +98,7 @@
     $('.col-1 li').click(function() {
         value2 = $(this).attr('id');
         value1 = $(this).attr('meal');
-        document.getElementById("name").innerText=value1;
+        document.getElementById("name").innerText = value1;
 
 
     });

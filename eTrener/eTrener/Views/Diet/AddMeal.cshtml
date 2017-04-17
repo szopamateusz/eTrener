@@ -1,8 +1,40 @@
-﻿
+﻿@model eTrener.Models.SelectedFoodModel
 @{
     ViewBag.Title = "AddMeal";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<link href="~/Styles/diet.css" rel="stylesheet" type="text/css" />
 
-<h2>AddMeal</h2>
+@using (Html.BeginForm("AddMeal", "Diet", FormMethod.Post, new {role = "form"}))
+{
+    <div id="servings" class="col-1 block-1">
+        <div id="loaded_item">
 
+            <p class="food-description">
+                <label id="name"></label>
+            </p>
+            <div class="user_submitted"></div>
+            <p></p>
+
+            <h3 class="secondary-title">How much?</h3>
+            @Html.TextBoxFor(m => m.Weight, new { @class = "form-control" })
+            servings of 1 gram
+
+
+            <p></p>
+            <p></p>
+            <h3 class="secondary-title">To which meal?</h3>
+            @Html.DropDownListFor(m => m.Meal,
+                new List<SelectListItem>
+                {
+                    new SelectListItem {Value = "Breakfast", Text = "Breakfast"},
+                    new SelectListItem {Value = "Lunch", Text = "Lunch"},
+                    new SelectListItem {Value = "Dinner", Text = "Dinner"},
+                    new SelectListItem {Value = "Snacks", Text = "Snacks"}
+                })
+                
+            <p></p>
+            <input type="submit" value="Add" class="btn btn-default" />
+        </div>
+    </div>
+}

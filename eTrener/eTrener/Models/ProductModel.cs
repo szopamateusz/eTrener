@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -15,5 +16,6 @@ namespace eTrener.Models
         public decimal Fat { get; set; }
         public decimal Carbs { get; set; }
         public decimal Protein { get; set; }
+   
     }
 }
