@@ -9,7 +9,7 @@ namespace eTrener.Models
     public class SelectedFoodModel
     {
         public string Meal { get; set; }
-        public decimal Weight { get; set; }
+        public int Weight { get; set; }
 
     }
 }

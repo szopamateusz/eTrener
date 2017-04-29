@@ -87,3 +87,6 @@ C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\Ninject.xml
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\Ninject.Web.Common.xml
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\Ninject.Web.Mvc.xml
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.Migrations.nextmigration.resources
+C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.Migrations.somenewtypes.resources
+C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.Migrations.somenewtypes2.resources
+C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.Migrations.newtable.resources
