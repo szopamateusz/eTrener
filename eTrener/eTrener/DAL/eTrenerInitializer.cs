@@ -16,7 +16,7 @@ namespace eTrener.DAL
     {
         public static void SeedKursyData(eTrenerContext context)
         {
-            var product = new List<ProductModel>
+            var product = new List<Product>
             {
 
             };

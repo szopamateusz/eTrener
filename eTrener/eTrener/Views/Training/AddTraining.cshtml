@@ -1,0 +1,63 @@
+﻿@model eTrener.Models.Excercise
+
+@{
+    ViewBag.Title = "AddTraining";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm("AddTraining", "Training", FormMethod.Post, new { role = "form" }))
+{
+    <div class="box-body">
+    </div>
+    <div class="box-body">
+        <div class="form-group">
+            @Html.LabelFor(m => m.Name, new { @class = "col0md-2 control-label" })
+            <div class="col-md-12">
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", style = "width:600px" })
+            </div>
+        </div>
+    </div>
+    <div class="box-body">
+        <div class="form-group">
+            @Html.LabelFor(m => m.About, new { @class = "col0md-2 control-label" })
+            <div class="col-md-12">
+                @Html.TextAreaFor(m => m.About, new { @class = "form-control", style = "height:300px;width:600px" })
+            </div>
+        </div>
+    </div>
+    <div class="box-body">
+        <div class="form-group">
+            @Html.LabelFor(m => m.BodyPart, new { @class = "col0md-2 control-label" })
+            <div class="col-md-12">
+                @Html.TextBoxFor(m => m.BodyPart, new { @class = "form-control", style = "width:600px" })
+            </div>
+        </div>
+    </div>
+
+    <div class="box-body">
+        <div class="form-group">
+            @Html.LabelFor(m => m.YtUrl, new { @class = "col0md-2 control-label" })
+            <div class="col-md-12">
+                @Html.TextBoxFor(m => m.YtUrl, new { @class = "form-control", style = "width:600px" })
+            </div>
+        </div>
+    </div>
+
+    <div class="box-body">
+        <div class="form-group">
+            @Html.LabelFor(m => m.ImgUrl, new { @class = "col0md-2 control-label" })
+            <div class="col-md-12">
+                @Html.TextBoxFor(m => m.ImgUrl, new { @class = "form-control", style = "width:600px" })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Add" class="btn btn-default" />
+        </div>
+    </div>
+}
+@*@Html.Partial("Popup")*@

@@ -89,28 +89,30 @@ namespace eTrener.Infrastructure
             var ingredient = DownloadIngredient();
             return ingredient.Sum(k => (k.Model.Protein * k.Weight/100));
         }
-        public DietModel CreateDiet(DietModel newDiet, string userId)
+        public DietViewModel CreateDiet(DietViewModel newDiet, string userId)
         {
-            var ingredient = DownloadIngredient();
+            var diet = DownloadIngredient();
             newDiet.UserId = userId;
 
-            db.Diets.Add(newDiet);
 
             if (newDiet.Diet == null)
                 newDiet.Diet = new List<DietPosition>();
 
-
-            foreach (var koszykElement in ingredient)
+            int lastId = db.Diets.Max(k => k.DietId);
+            foreach (var meal in diet)
             {
-                var nowaPozycjaZamowienia = new DietPosition()
+
+                var newPosition = new DietPosition()
                 {
-                    ProductId = koszykElement.IngredientId,
-                    Quantity = koszykElement.Weight
+                    ProductId = meal.Model.ProductId,
+                    Quantity = meal.Weight, 
+                    DietId = newDiet.DietId
                 };
 
-                newDiet.Diet.Add(nowaPozycjaZamowienia);
+                newDiet.Diet.Add(newPosition);
             }
-            
+            db.Diets.Add(newDiet);
+
             db.SaveChanges();
 
             return newDiet;

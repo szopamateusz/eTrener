@@ -11,7 +11,7 @@ namespace eTrener.Models
     {
         [Key]
         public int IngredientId { get; set; }
-        public ProductModel Model { get; set; }
+        public Product Model { get; set; }
         public int Weight { get; set; }
         public string Meal { get; set; }
         

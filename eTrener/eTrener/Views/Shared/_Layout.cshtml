@@ -91,15 +91,38 @@
             <a href="@Url.Action("AddProduct", "Diet")"><i class="fa fa-circle-o"></i> Add a product</a>
         </li>
         <li id="left-sidebar-menu-elements-buttons">
-            <a href="@Url.Action("Index", "Home")"><i class="fa fa-circle-o"></i> Create diet</a>
+            <a href="@Url.Action("CreateDiet", "Diet")"><i class="fa fa-circle-o"></i> Create Diet</a>
         </li>
         <li id="left-sidebar-menu-elements-sliders">
-            <a href="@Url.Action("Index", "Home")"><i class="fa fa-circle-o"></i> Sample diet</a>
+            <a href="@Url.Action("Index", "Home")"><i class="fa fa-circle-o"></i> Sample DietView</a>
         </li>
        
     </ul>
-</li>
 
+</li>
+    <li id="left-sidebar-menu-elements3" class="treeview">
+        <a href="#">
+            <i class="fa fa-cutlery"></i>
+            <span>Training</span>
+            <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+            <li id="left-sidebar-menu-elements-general2">
+                <a href="@Url.Action("TrainingList", "Training")"><i class="fa fa-circle-o"></i> List of traimimg</a>
+            </li>
+            <li id="left-sidebar-menu-elements-icons2">
+                <a href="@Url.Action("AddTraining", "Training")"><i class="fa fa-circle-o"></i> Add an excercise</a>
+            </li>
+            <li id="left-sidebar-menu-elements-buttons2">
+                <a href="@Url.Action("CreateDiet", "Training")"><i class="fa fa-circle-o"></i> Create Diet</a>
+            </li>
+            <li id="left-sidebar-menu-elements-sliders2">
+                <a href="@Url.Action("Index", "Training")"><i class="fa fa-circle-o"></i> Sample DietView</a>
+            </li>
+
+        </ul>
+
+    </li>
 </ul>
 </section>
 </aside>

@@ -33,9 +33,9 @@ namespace eTrener.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddProduct(ProductModel model)
+        public ActionResult AddProduct(Product model)
         {
-            ProductModel models = new ProductModel
+            Product models = new Product
             {
                 ProductId = model.ProductId,
                 Name = model.Name,
@@ -51,11 +51,11 @@ namespace eTrener.Controllers
 
         public ActionResult ProductList(string searchQuery = null)
         {
-            List<ProductModel> productList;
+            List<Product> productList;
             //  ICacheProvider cache = new CacheProvider();
             //   if (cache.IsSet(Consts.ProductList))
             //   {
-            //       productList = cache.Get(Consts.ProductList) as List<ProductModel>;
+            //       productList = cache.Get(Consts.ProductList) as List<Product>;
             //    }
             //    else
 //{
@@ -100,11 +100,11 @@ namespace eTrener.Controllers
 
         public ActionResult select_food(string searchQuery = null)
         {
-            List<ProductModel> productList;
+            List<Product> productList;
             //  ICacheProvider cache = new CacheProvider();
             //   if (cache.IsSet(Consts.ProductList))
             //   {
-            //       productList = cache.Get(Consts.ProductList) as List<ProductModel>;
+            //       productList = cache.Get(Consts.ProductList) as List<Product>;
             //    }
             //    else
             //{
@@ -141,7 +141,7 @@ namespace eTrener.Controllers
             var carbs = mealMenager.DownloadCarbs();
             var fat = mealMenager.DownloadFat();
             var protein = mealMenager.DownloadProteins();
-            var result = new DietDeleteModel()
+            var result = new DeleteProductFromListModel()
             {
                 Calories = calories,
                 Carbs = carbs,
@@ -154,8 +154,9 @@ namespace eTrener.Controllers
         {
             return View();
         }
+
         [HttpPost]
-        public async Task<ActionResult> Create(DietModel details)
+        public async Task<ActionResult> Create(DietViewModel details)
         {
             var userId = User.Identity.GetUserId();
 
