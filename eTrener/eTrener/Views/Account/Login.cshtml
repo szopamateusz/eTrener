@@ -1,4 +1,5 @@
 ﻿@using System.Web.Optimization
+@using eTrener.Models
 @model eTrener.Models.LoginViewModel
 @{
     Layout = null;
@@ -51,17 +52,9 @@
                 </div>
             </div>
         }
-        <div class="social-auth-links text-center">
-            <p>- OR -</p>
-            <a href="#" class="btn btn-block btn-social btn-facebook btn-flat">
-                <i class="fa fa-facebook"></i> Sign in using
-                Facebook
-            </a>
-            <a href="#" class="btn btn-block btn-social btn-google btn-flat">
-                <i class="fa fa-google-plus"></i> Sign in using
-                Google+
-            </a>
-        </div>
+                @Html.Partial("_ExternalLoginsPartialView", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+     
+
         <a href="#">I forgot my password</a><br>
         <a href="@Url.Action("Register", "Account")" class="text-center">Register as a new user</a>
     </div>

@@ -93,3 +93,7 @@ C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.Migrations
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.Migrations.changenamesoftablesandviews.resources
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.Migrations.addnewtablestodatabase.resources
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.Migrations.addimgtoexcercises.resources
+C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\Newtonsoft.Json.dll
+C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\Newtonsoft.Json.xml

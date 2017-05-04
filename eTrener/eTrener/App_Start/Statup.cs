@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using eTrener.App_Start;
 using eTrener.DAL;
 using eTrener.Models;
@@ -10,10 +7,10 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
+using Microsoft.Owin.Security.Google;
 
 namespace eTrener
 {
-
     public partial class Startup
     {
         // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301864
@@ -35,9 +32,11 @@ namespace eTrener
                 {
                     // Enables the application to validate the security stamp when the user logs in.
                     // This is a security feature which is used when you change a password or add an external login to your account.  
-                    OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<ApplicationUserManager, IdentityModels.ApplicationUser>(
-                        validateInterval: TimeSpan.FromMinutes(30),
-                        regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
+                    OnValidateIdentity =
+                        SecurityStampValidator
+                            .OnValidateIdentity<ApplicationUserManager, IdentityModels.ApplicationUser>(
+                                validateInterval: TimeSpan.FromMinutes(30),
+                                regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }
             });
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
@@ -59,15 +58,15 @@ namespace eTrener
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            //            app.UseFacebookAuthentication(
+            //               appId: "",
+            //               appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "809455142447-sccsh2p5f8jun923d3ns3dlqmhnjtjbg.apps.googleusercontent.com",
+                ClientSecret = "rOLTJv7HZVDgmkWd5mGk2yFJ"
+            });
         }
     }
 }
