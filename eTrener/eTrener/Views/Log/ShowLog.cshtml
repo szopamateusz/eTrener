@@ -1,7 +1,40 @@
-﻿
+﻿@model IEnumerable<eTrener.Models.TrainingExcercise>
+
 @{
     ViewBag.Title = "ShowLog";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
+<link href="~/Content/Table/component.css" rel="stylesheet"/>
+<link href="~/Content/Table/demo.css" rel="stylesheet"/>
+<link href="~/Content/Table/normalize.css" rel="stylesheet"/>
+
+<div class="container">
+    <table>
+        <thead>
+        <tr>
+            <th>Training date</th>
+            <th>Excercise name</th>
+            <th>Series number</th>
+            <th>Repetition</th>
+            <th>Weight</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var position in Model)
+        {
+            <tr>      
+                <td>@position.TrainingTime</td>
+                <td>@position.ExcerciseName</td>
+                <td>@position.SeriesNumber</td>
+                <td>@position.Repetition</td>
+                <td>@position.Weight</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
+<script src="~/Scripts/jquery.stickyheader.js"></script>

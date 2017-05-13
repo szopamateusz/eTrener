@@ -431,6 +431,9 @@
     <Content Include="Content\ionicons\fonts\ionicons.svg" />
     <Content Include="Content\Letter.css" />
     <Content Include="Content\style.css" />
+    <Content Include="Content\Table\component.css" />
+    <Content Include="Content\Table\demo.css" />
+    <Content Include="Content\Table\normalize.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -465,6 +468,7 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\jquery.slimscroll.js" />
+    <Content Include="Scripts\jquery.stickyheader.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />

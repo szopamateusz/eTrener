@@ -63,7 +63,18 @@ namespace eTrener.Controllers
 
         public ActionResult ShowLog()
         {
-            return View();
+            bool isAdmin = User.IsInRole("Admin");
+            IEnumerable<TrainingExcercise> trainingExcercises;
+            if (isAdmin)
+            {
+                trainingExcercises = db.Excercises.OrderByDescending(o => o.TrainingTime).ToArray();
+            }
+            else
+            {
+                var userId = User.Identity.GetUserId();
+                trainingExcercises = db.Excercises.Where(o => o.UserId == userId).OrderByDescending(o => o.TrainingTime).ToArray();
+            }
+            return View(trainingExcercises);
         }
     }
 }
