@@ -7,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>eTrener</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link href="~/DashboardStyles/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
-    <link href="~/DashboardStyles/plugins/ionicons/css/ionicons.css" rel="stylesheet" type="text/css"/>
-    <link href="~/DashboardStyles/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-    <link href="~/DashboardStyles/dist/css/admin-lte.css" rel="stylesheet" type="text/css"/>
-    <link href="~/DashboardStyles/dist/css/skins/_all-skins.css" rel="stylesheet" type="text/css"/>
+    <link href="~/Content/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/ionicons/css/ionicons.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/dist/css/admin-lte.css" rel="stylesheet" />
+    <link href="~/Content/dist/css/skins/skin-black-light.css" rel="stylesheet" />
 
 
 </head>
@@ -125,6 +125,28 @@
                     <li id="left-sidebar-menu-elements-sliders2">
                         <a href="@Url.Action("Index", "Training")"><i class="fa fa-circle-o"></i> Sample DietView</a>
                     </li>
+
+                </ul>
+
+            </li>
+            
+            <li id="left-sidebar-menu-elements4" class="treeview">
+                <a href="#">
+                    <i class="fa fa-cutlery"></i>
+                    <span>Training</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li id="left-sidebar-menu-elements-general4">
+                        <a href="@Url.Action("AddExcercise", "Log")"><i class="fa fa-circle-o"></i> List of traimimg</a>
+                    </li>
+                    @if (@User.IsInRole("Admin"))
+                    {
+                        <li id="left-sidebar-menu-elements-icons2">
+                            <a href="@Url.Action("ShowLog", "Log")"><i class="fa fa-circle-o"></i> Add an excercise</a>
+                        </li>
+                    }
+                   
 
                 </ul>
 
@@ -317,12 +339,15 @@
 </aside>
 <div class="control-sidebar-bg"></div>
 </div>
-<script src="~/DashboardStyles/plugins/jquery/js/jQuery-2.1.4.min.js"></script>
-<script src="~/DashboardStyles/bootstrap/js/bootstrap.js"></script>
-<script src="~/DashboardStyles/plugins/slimscroll/js/jquery.slimscroll.js"></script>
-<script src="~/DashboardStyles/plugins/fastclick/js/fastclick.js"></script>
-<script src="~/Scripts/_Layout.js"></script>
-<script src="~/DashboardStyles/dist/js/app.js"></script>
+
+
+    <script src="~/Scripts/jQuery-2.1.4.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/jquery.slimscroll.js"></script>
+    <script src="~/Scripts/fastclick.js"></script>
+    <script src="~/Scripts/_Layout.js"></script>
+    <script src="~/Content/dist/js/app.js"></script>
+
 
 
 @RenderSection("menu", required: false)

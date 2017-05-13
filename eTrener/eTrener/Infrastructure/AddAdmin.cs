@@ -24,7 +24,7 @@ namespace eTrener.Infrastructure
             var user = userManager.FindByName(name);
             if (user == null)
             {
-                user = new ApplicationUser { UserName = name, Email = name, UserData = new UserData() };
+                user = new ApplicationUser {UserName = name, Email = name, UserData = new UserData()};
                 var result = userManager.Create(user, password);
             }
 

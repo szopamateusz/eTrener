@@ -10,7 +10,8 @@ namespace eTrener.Models
     {
         [Key]
         public int TrainingElementId { get; set; }
-        public int TrainingId { get; set; }
+        //   public int TrainingId { get; set; }
+        public DateTime TrainingTime { get; set; }
         public int ExcerciseId { get; set; }
         public int SeriesNumber { get; set; }
         public int Repetition { get; set; }

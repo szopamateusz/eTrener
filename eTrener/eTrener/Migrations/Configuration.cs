@@ -5,12 +5,13 @@ namespace eTrener.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    public sealed class Configuration : DbMigrationsConfiguration<eTrener.DAL.eTrenerContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<eTrener.DAL.eTrenerContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
             ContextKey = "eTrener.DAL.eTrenerContext";
+
         }
 
         protected override void Seed(eTrener.DAL.eTrenerContext context)

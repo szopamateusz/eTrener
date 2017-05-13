@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="eTrener-Web.config Connection String" description="eTrener Connection String used in web.config by the application to access the database." defaultValue="Data Source=tcp:etrenerdbserver.database.windows.net,1433;Initial Catalog=etrenerdb;Persist Security Info=False;User ID=mateusz;Password=zaq1@WSX;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\mateu\\Source\\Repos\\eTrener\\eTrener\\eTrener\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='eTrener']/@connectionString" />
-  </parameter>
-  <parameter name="eTrener_DatabasePublish-Web.config Connection String" description="eTrener_DatabasePublish Connection String used in web.config by the application to access the database." defaultValue="eTrener_DatabasePublish.ConnetionString" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\mateu\\Source\\Repos\\eTrener\\eTrener\\eTrener\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='eTrener_DatabasePublish']/@connectionString" />
-  </parameter>
-</parameters>

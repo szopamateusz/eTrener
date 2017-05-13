@@ -58,7 +58,7 @@ namespace eTrener.Controllers
             //       productList = cache.Get(Consts.ProductList) as List<Product>;
             //    }
             //    else
-//{
+            //{
             productList = db.Products.Where(a => (searchQuery == null
                                                   || a.Name.ToLower().Contains(searchQuery.ToLower())
             )).ToList();
@@ -94,7 +94,7 @@ namespace eTrener.Controllers
             var productList =
                 db.Products.Where(a => a.Name.ToLower().Contains(term.ToLower()))
                     .Take(5)
-                    .Select(a => new {label = a.Name});
+                    .Select(a => new { label = a.Name });
             return Json(productList, JsonRequestBehavior.AllowGet);
         }
 
