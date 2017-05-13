@@ -1,9 +1,11 @@
-﻿@model eTrener.Models.TrainingExcercise
+﻿@using System.Web.Optimization
+@model eTrener.Models.TrainingExcercise
 
 @{
     ViewBag.Title = "AddExcercise";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<<<<<<< HEAD
 
 @using (Html.BeginForm())
 {
@@ -71,3 +73,10 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+=======
+@Html.TextBoxFor(m => m.TrainingTime, "{0:dd/MM/yyyy}")
+
+
+
+
+>>>>>>> parent of fe3c929... clear the code
