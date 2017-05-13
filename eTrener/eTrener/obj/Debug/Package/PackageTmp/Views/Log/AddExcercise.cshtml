@@ -1,0 +1,20 @@
+﻿@using System.Web.Optimization
+@model eTrener.Models.TrainingExcercise
+
+@{
+    ViewBag.Title = "AddExcercise";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.TextBoxFor(model => model.TrainingTime, new { htmlAttributes = new { @class = "form-control", @id = "phone" } })
+
+@section Scripts{
+    <script type="text/javascript" src="/Scripts/jquery.maskedinput.min.js"></script>
+<script src="~/Scripts/jquery-3.1.1.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#phone").mask("(999) 999-9999");
+        });
+    </script>
+}

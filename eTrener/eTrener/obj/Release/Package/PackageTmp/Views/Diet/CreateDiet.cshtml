@@ -1,0 +1,459 @@
+﻿@{
+    ViewBag.Title = "CreateDiet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using System.Activities.Expressions
+@using eTrener.Infrastructure
+@model eTrener.Models.CreateDietModel
+
+<link href="~/Styles/diet.css" rel="stylesheet" type="text/css"/>
+
+<table class="table0 " id="diary-table">
+
+<colgroup>
+    <col class="col-1">
+    <col class="col-2">
+    <col class="col-2">
+    <col class="col-2">
+    <col class="col-2">
+    <col class="col-2">
+    <col class="col-2">
+    <col class="col-8">
+</colgroup>
+
+<tbody>
+
+
+<tr class="meal_header">
+
+    <td class="first alt">Breakfast</td>
+    <td class="alt nutrient-column">
+        Calories
+        <div class="subtitle">kcal</div>
+    </td>
+    <td class="alt nutrient-column">
+        Carbs
+        <div class="subtitle">g</div>
+    </td>
+    <td class="alt nutrient-column">
+        Fat
+        <div class="subtitle">g</div>
+    </td>
+    <td class="alt nutrient-column">
+        Protein
+        <div class="subtitle">g</div>
+    </td>
+    <td class="alt nutrient-column">
+
+    </td>
+</tr>
+
+
+<tr class="bottom">
+
+
+    @foreach (var position in Model.IngredientModels)
+    {
+        <tr class="first alt", id="record-@position.Model.ProductId">
+
+            @if (@position.Meal.Equals("Breakfast"))
+            {
+                <td>@position.Model.Name</td>
+
+                {
+                    var result = position.Weight * position.Model.Calories / 100;
+                    <td>@result</td>
+                }
+
+
+                {
+                    var result = position.Weight * position.Model.Carbs / 100;
+                    <td>@result</td>
+                }
+                {
+                    var result = position.Weight * position.Model.Fat / 100;
+                    <td>@result</td>
+                }
+                {
+                    var result = position.Weight * position.Model.Protein / 100;
+                    <td>@result</td>
+                }
+                <td>
+                    <a class="ion-android-delete" meal-id="Breakfast" data-id="@position.Model.ProductId" href="#">Delete</a>
+                </td>
+            }
+        </tr>
+    }
+    <td class="first alt" style="z-index: 10">
+
+        <a href=@Url.Action("select_food", "Diet") class="add_food">Add Food</a>
+    </td>
+</tr>
+
+
+<tr class="meal_header">
+
+    <td class="first alt">Lunch</td>
+    <td class="alt nutrient-column">
+        Calories
+        <div class="subtitle">kcal</div>
+    </td>
+    <td class="alt nutrient-column">
+        Carbs
+        <div class="subtitle">g</div>
+    </td>
+    <td class="alt nutrient-column">
+        Fat
+        <div class="subtitle">g</div>
+    </td>
+    <td class="alt nutrient-column">
+        Protein
+        <div class="subtitle">g</div>
+    </td>
+    <td class="alt nutrient-column"></td>
+</tr>
+
+
+<tr class="bottom">
+    <tr class="bottom">
+
+
+        @foreach (var position in Model.IngredientModels)
+        {
+            <tr class="first alt", id="record2-@position.Model.ProductId">
+
+                @if (@position.Meal.Equals("Lunch"))
+                {
+                    <td>@position.Model.Name</td>
+
+                    {
+                        var result = position.Weight * position.Model.Calories / 100;
+                        <td>@result</td>
+                    }
+
+
+                    {
+                        var result = position.Weight * position.Model.Carbs / 100;
+                        <td>@result</td>
+                    }
+                    {
+                        var result = position.Weight * position.Model.Fat / 100;
+                        <td>@result</td>
+                    }
+                    {
+                        var result = position.Weight * position.Model.Protein / 100;
+                        <td>@result</td>
+                    }
+                    <td>
+                        <a class="ion-android-delete" meal-id="Lunch" data-id="@position.Model.ProductId" href="#">Delete</a>
+                    </td>
+                }
+            </tr>
+        }
+        <td class="first alt" style="z-index: 10">
+
+            <a href=@Url.Action("select_food", "Diet") class="add_food">Add Food</a>
+        </td>
+    </tr>
+
+</tr>
+
+
+<tr class="meal_header">
+
+    <td class="first alt">Dinner</td>
+    <td class="alt nutrient-column">
+        Calories
+        <div class="subtitle">kcal</div>
+    </td>
+    <td class="alt nutrient-column">
+        Carbs
+        <div class="subtitle">g</div>
+    </td>
+    <td class="alt nutrient-column">
+        Fat
+        <div class="subtitle">g</div>
+    </td>
+    <td class="alt nutrient-column">
+        Protein
+        <div class="subtitle">g</div>
+    </td>
+    <td class="alt nutrient-column"></td>
+</tr>
+
+
+<tr class="bottom">
+
+    <tr class="bottom">
+
+
+        @foreach (var position in Model.IngredientModels)
+        {
+            <tr class="first alt", id="record3-@position.Model.ProductId">
+
+                @if (@position.Meal.Equals("Dinner"))
+                {
+                    <td>@position.Model.Name</td>
+
+                    {
+                        var result = position.Weight * position.Model.Calories / 100;
+                        <td>@result</td>
+                    }
+
+
+                    {
+                        var result = position.Weight * position.Model.Carbs / 100;
+                        <td>@result</td>
+                    }
+                    {
+                        var result = position.Weight * position.Model.Fat / 100;
+                        <td>@result</td>
+                    }
+                    {
+                        var result = position.Weight * position.Model.Protein / 100;
+                        <td>@result</td>
+                    }
+                    <td>
+                        <a class="ion-android-delete" meal-id="Dinner"  data-id="@position.Model.ProductId" href="#">Delete</a>
+                    </td>
+                }
+            </tr>
+        }
+        <td class="first alt" style="z-index: 10">
+
+            <a href=@Url.Action("select_food", "Diet") class="add_food">Add Food</a>
+        </td>
+    </tr>
+    <td></td>
+
+</tr>
+
+
+<tr class="meal_header">
+
+    <td class="first alt">Snacks</td>
+    <td class="alt nutrient-column">
+        Calories
+        <div class="subtitle">kcal</div>
+    </td>
+    <td class="alt nutrient-column">
+        Carbs
+        <div class="subtitle">g</div>
+    </td>
+    <td class="alt nutrient-column">
+        Fat
+        <div class="subtitle">g</div>
+    </td>
+    <td class="alt nutrient-column">
+        Protein
+        <div class="subtitle">g</div>
+    </td>
+    <td class="alt nutrient-column"></td>
+</tr>
+
+
+<tr class="bottom">
+    <tr class="bottom">
+
+
+        @foreach (var position in Model.IngredientModels)
+        {
+            <tr class="first alt", id="record4-@position.Model.ProductId">
+
+                @if (@position.Meal.Equals("Snacks"))
+                {
+                    <td>@position.Model.Name</td>
+
+                    {
+                        var result = position.Weight * position.Model.Calories / 100;
+                        <td>@result</td>
+                    }
+
+
+                    {
+                        var result = position.Weight * position.Model.Carbs / 100;
+                        <td>@result</td>
+                    }
+                    {
+                        var result = position.Weight * position.Model.Fat / 100;
+                        <td>@result</td>
+                    }
+                    {
+                        var result = position.Weight * position.Model.Protein / 100;
+                        <td>@result</td>
+                    }
+                    <td>
+                        <a class="ion-android-delete" meal-id="Snacks" data-id="@position.Model.ProductId" href="#">Delete</a>
+                    </td>
+                }
+            </tr>
+        }
+        <td class="first alt" style="z-index: 10">
+            <a href=@Url.Action("select_food", "Diet") class="add_food">Add Food</a>
+        </td>
+    </tr>
+
+</tr>
+
+
+<tr class="total">
+
+<td class="first">Totals</td>
+
+
+<td>
+    
+    <span id="calories">@Model.Calories </span>
+</td>
+
+<td>
+   
+    <span id="carbs">@Model.Carbs</span>  
+</td>
+
+<td>
+   
+    <span id="fat">@Model.Fat</span>    
+</td>
+
+<td>    
+
+    <span id="proteins">@Model.Protein</span>
+
+</td>
+
+
+<td class="empty"></td>
+
+
+<tr class="total alt">
+
+    <td class="first">Your Daily Goal </td>
+
+
+    <td>2,770</td>
+    <td>
+        <span class="macro-value">346</span>
+        <span class="macro-percentage">
+            50
+        </span>
+    </td>
+    <td>
+        <span class="macro-value">92</span>
+        <span class="macro-percentage">
+            30
+        </span>
+    </td>
+    <td>
+        <span class="macro-value">139</span>
+        <span class="macro-percentage">
+            20
+        </span>
+    </td>
+
+</tr>
+
+<tr class="total remaining">
+
+    <td class="first">Remaining</td>
+
+
+    <td class="positive">2,770</td>
+    <td class="positive">
+        <span class="macro-value">346</span>
+        <span class="macro-percentage ">
+            50
+        </span>
+    </td>
+    <td class="positive">
+        <span class="macro-value">92</span>
+        <span class="macro-percentage ">
+            30
+        </span>
+    </td>
+    <td class="positive">
+        <span class="macro-value">139</span>
+        <span class="macro-percentage ">
+            20
+        </span>
+    </td>
+
+
+</tr>
+
+
+</tbody>
+
+
+<tfoot>
+
+<tr>
+
+    <td class="first"></td>
+    <td class="alt nutrient-column">
+        Calories
+        <div class="subtitle">kcal</div>
+    </td>
+    <td class="alt nutrient-column">
+        Carbs
+        <div class="subtitle">g</div>
+    </td>
+    <td class="alt nutrient-column">
+        Fat
+        <div class="subtitle">g</div>
+    </td>
+    <td class="alt nutrient-column">
+        Protein
+        <div class="subtitle">g</div>
+    </td>
+
+
+</tr>
+
+
+</tfoot>
+
+
+</table>
+<a class="PrzyciskLink" id="koszyk-button-zaplac" href="@Url.Action("Create","Diet")">Create</a>
+
+<script src="~/Scripts/jquery-3.1.1.js"></script>
+<script src="~/Scripts/jquery-3.1.1.min.js"></script>
+<script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+<script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+
+<script type="text/javascript">
+    $(function() {
+        $(".ion-android-delete").click(function() {
+
+            var recordToDell = $(this).attr("data-id");
+            var meal = $(this).attr("meal-id");
+
+            if (recordToDell != '') {
+
+                $.post("/Diet/DeleteFromDiet",
+                    { "ID": recordToDell, "Meal":meal },
+                    function(response) {
+
+                        $('#proteins').text(response.Protein);
+                        $('#calories').text(response.Calories);
+                        $('#fat').text(response.Fat);
+                        $('#carbs').text(response.Carbs);
+                        if(meal=='Breakfast'){
+                        $('#record-' + recordToDell).fadeOut('slow');
+                        }else if (meal == 'Lunch') {
+                            $('#record2-' + recordToDell).fadeOut('slow');
+                        }
+                        else if (meal == 'Dinner') {
+                            $('#record3-' + recordToDell).fadeOut('slow');
+                        }
+                        else if (meal == 'Snacks') {
+                            $('#record4-' + recordToDell).fadeOut('slow');
+                        }
+                    });
+                return false;
+
+            }
+    });
+    });
+</script>

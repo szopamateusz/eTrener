@@ -1,0 +1,207 @@
+﻿@using eTrener.Models
+@{
+    ViewBag.Title = "_Excercise";
+}
+
+
+<table id="products" class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Part of body</th>
+        <th>More info</th>
+        <th>Delete</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var position in Model)
+    {
+        <tr>
+            <td>@position.Name</td>
+            <td>@position.BodyPart</td>
+            <td>
+                <a href="javascript:void(0);" class="anchorDetail" data-id="@position.ExcerciseId">Details</a>   
+            </td>
+            <td><a class="ion-android-delete" data-id="@position.ExcerciseId" href="#">Delete</a></td>
+           
+        </tr>
+    }
+
+    </tbody>
+    <tfoot>
+    <tr>
+        <th>Name</th>
+        <th>Part of body</th>
+        <th>More info</th>
+        <th>Delete</th>
+    </tr>
+    </tfoot>
+</table>
+<div id='myModal' class='modal'>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id='myModalContent'></div>
+        </div>
+    </div>
+
+</div> 
+<script src="~/Scripts/jquery-3.1.1.min.js"></script>
+<script src="~/JS/bootstrap.js"></script>
+<script src="~/JS/bootstrap.min.js"></script>
+<script>
+
+    var TeamDetailPostBackURL = '/Training/Popup';
+    $(function () {
+        $(".anchorDetail").click(function () {
+            debugger;
+            var $buttonClicked = $(this);
+            var id = $buttonClicked.attr('data-id');
+            var options = { "backdrop": "static", keyboard: true };
+            $.ajax({
+                type: "GET",
+                url: TeamDetailPostBackURL,
+                contentType: "application/json; charset=utf-8",
+                data: { "Id": id },
+                datatype: "json",
+                success: function (data) {
+                    debugger;
+                    $('#myModalContent').html(data);
+                    $('#myModal').modal(options);
+                    $('#myModal').modal('show');
+
+                },
+                error: function () {
+                    alert("Dynamic content load failed.");
+                }
+            });
+        });
+
+        $("#closbtn").click(function () {
+            $('#myModal').modal('hide');
+        });
+    });
+
+</script>
+
+<script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+<script type="text/javascript">
+        $(document).ready(function () {
+
+            $.ajaxSetup({ cache: false });
+
+            $("#openDialog").live("click", function (e) {
+                e.preventDefault();
+                var url = $(this).attr('href');
+
+                $("#dialog-edit").dialog({
+                    title: 'Add Student',
+                    autoOpen: false,
+                    resizable: false,
+                    height: 355,
+                    width: 400,
+                    show: { effect: 'drop', direction: "up" },
+                    modal: true,
+                    draggable: true,
+                    open: function (event, ui) {
+                        $(this).load(url);
+                    },
+                    close: function (event, ui) {
+                        $(this).dialog('close');
+                    }
+                });
+
+                $("#dialog-edit").dialog('open');
+                return false;
+            });
+
+            $(".editDialog").live("click", function (e) {
+                var url = $(this).attr('href');
+                $("#dialog-edit").dialog({
+                    title: 'Edit Customer',
+                    autoOpen: false,
+                    resizable: false,
+                    height: 355,
+                    width: 400,
+                    show: { effect: 'drop', direction: "up" },
+                    modal: true,
+                    draggable: true,
+                    open: function (event, ui) {
+                        $(this).load(url);
+
+                    },
+                    close: function (event, ui) {
+                        $(this).dialog('close');
+                    }
+                });
+
+                $("#dialog-edit").dialog('open');
+                return false;
+            });
+
+            $(".confirmDialog").live("click", function (e) {
+
+                var url = $(this).attr('href');
+                $("#dialog-confirm").dialog({
+                    autoOpen: false,
+                    resizable: false,
+                    height: 170,
+                    width: 350,
+                    show: { effect: 'drop', direction: "up" },
+                    modal: true,
+                    draggable: true,
+                    buttons: {
+                        "OK": function () {
+                            $(this).dialog("close");
+                            window.location = url;
+
+                        },
+                        "Cancel": function () {
+                            $(this).dialog("close");
+
+                        }
+                    }
+                });
+                $("#dialog-confirm").dialog('open');
+                return false;
+            });
+
+            $(".viewDialog").live("click", function (e) {
+                var url = $(this).attr('href');
+                $("#dialog-view").dialog({
+                    title: 'View Customer',
+                    autoOpen: false,
+                    resizable: false,
+                    height: 355,
+                    width: 400,
+                    show: { effect: 'drop', direction: "up" },
+                    modal: true,
+                    draggable: true,
+                    open: function (event, ui) {
+                        $(this).load(url);
+
+                    },
+                    buttons: {
+                        "Close": function () {
+                            $(this).dialog("close");
+
+                        }
+                    },
+                    close: function (event, ui) {
+                        $(this).dialog('close');
+                    }
+                });
+
+                $("#dialog-view").dialog('open');
+                return false;
+            });
+
+            $("#btncancel").live("click", function (e) {
+                $("#dialog-edit").dialog('close');
+
+            });
+        });
+</script>
+
+
+

@@ -14,6 +14,7 @@ namespace eTrener.DAL
     {
         public eTrenerContext() : base("eTrener")
         {
+
         }
         static eTrenerContext()
         {

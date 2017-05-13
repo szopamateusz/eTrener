@@ -88,7 +88,7 @@ namespace eTrener.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("loginerror", "Nieudana próba logowania.");
+                    ModelState.AddModelError("", "Unsuccessful login atempt.");
                     return View(model);
             }
         }

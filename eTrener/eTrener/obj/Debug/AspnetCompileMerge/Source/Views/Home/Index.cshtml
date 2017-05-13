@@ -1,0 +1,151 @@
+﻿
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>eTrener | Twój trening w jednym miejscu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="eTrener to portal zapewniający kompleksowe usługi z zakresu tworzenia DietView, planu treningowego, monitorowania postępów w treningu i wiele więcej"/>
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="~/Styles/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/style.css" rel="stylesheet" type="text/css" />
+    <script src="~/JS/jquery.min.js"> </script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700|Orbitron:400,500,700,900' rel='stylesheet' type='text/css'>
+    <script src="~/JS/wow.min.js"></script>
+    <link href="~/Styles/animate.css" rel="stylesheet" type="text/css" />
+    <script>
+	new Wow().init();
+    </script>
+
+
+</head>
+<body>
+    <div class="banner" id="home">
+        <div class="header-bottom">
+            <div>
+                <div class="container">
+                    <div class="logo">
+                        <a href="@Url.Action("Index", "Home")"><h1>e<span>Trener</span></h1></a>
+                    </div>
+                    <span class="menu"> </span>
+                    <div class="top-menu">
+                        <nav class="navigation">
+                            <ul>
+                                
+                                <li><a href="@Url.Action("Index", "Home")"> Strona główna</a></li>
+                                <li><a href="@Url.Action("Index", "Home")"> Oferta</a></li>
+                                <li>@Html.ActionLink("Rej", "Dashboard", "Account")</li>
+                                @using Microsoft.AspNet.Identity
+                                
+                                <li><div id="login-header">
+                                        @if (Request.IsAuthenticated)
+                                        {
+                                            using (Html.BeginForm("Logoff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                                            {
+                                                @Html.AntiForgeryToken()
+
+                                                <div>
+                                                    @Html.ActionLink(User.Identity.GetUserName(), "Dashboard", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
+                                                </div>
+                                                <div>
+                                                    <a href="javascript:document.getElementById('logoutForm').submit()">Wyloguj</a>
+                                                </div>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <div>
+                                                @Html.ActionLink("Rejestracja", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
+                                            </div>
+                                            <div>
+                                                @Html.ActionLink("Zaloguj", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+                                            </div>
+                                        }
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <script>
+						$( "span.menu" ).click(function() {
+						  $( ".top-menu" ).slideToggle( "slow", function() {
+						  });
+						});
+                    </script>
+                    <script>
+				$(document).ready(function() {
+					 var navoffeset=$(".header-bottom").offset().top;
+					 $(window).scroll(function(){
+						var scrollpos=$(window).scrollTop();
+						if(scrollpos >=navoffeset){
+							$(".header-bottom").addClass("fixed");
+						}else{
+							$(".header-bottom").removeClass("fixed");
+						}
+					 });
+
+				});
+                    </script>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div id="cbp-fwslider" class="cbp-fwslider">
+                <ul>
+                    <li><a href="#"><img src="~/Photos/slide3.png" alt="img01" /></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <link rel="stylesheet" type="text/css" href="~/Styles/component.css" />
+    <script src="~/JS/modernizr.custom.js"></script>
+    <script src="~/JS/jquery.cbpFWSlider.min.js"></script>
+    <script>
+			$( function() {
+		
+				$( '#cbp-fwslider' ).cbpFWSlider();
+
+			} );
+    </script>
+    <div class="footer">
+        <div class="container">
+            <div class="f-grids">
+       
+                <div class="col-md-4 footer-grid wow fadeInUpBig animated animated" data-wow-delay="0.3s">
+                </div>
+                <div class="col-md-4 footer-grid wow fadeInUpBig animated animated" data-wow-delay="0.2s">
+                    <h3>contact<span class="opening">info</span></h3>
+                    <ul class="address">
+                        <li>Mateusz Szopa</li>
+                      
+                        <li><a class="mail" href="mailto:etrener@mateusz-szopa.pl">etrener@mateusz-szopa.pl</a></li>
+                    </ul>
+                
+
+
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="copy">
+                <p>&copy; 2017 All Rights Reserved.  </p>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+								jQuery(document).ready(function($) {
+									$(".scroll").click(function(event){
+										event.preventDefault();
+										$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+									});
+								});
+    </script>
+    <script type="text/javascript"> 
+									$(document).ready(function() {
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+
+									});
+    </script>
+</body>
+</html>

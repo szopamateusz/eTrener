@@ -19,112 +19,118 @@
 <div class="wrapper">
 <header class="main-header">
 
-<nav class="navbar navbar-static-top" role="navigation">
-    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-        <span class="sr-only">Toggle navigation</span>
-    </a>
-    <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-            
-            @Html.Partial("_LoginPartial")
-          
-        </ul>   
-    </div>
-</nav>
+    <nav class="navbar navbar-static-top" role="navigation">
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+        </a>
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+
+                @Html.Partial("_LoginPartial")
+
+            </ul>
+        </div>
+    </nav>
 </header>
 <aside class="main-sidebar">
-<section class="sidebar">
-<div class="user-panel">
-    <div class="pull-left image">
-        <img src="~/Images/account.jpeg" class="img-circle" alt="User Image">
-    </div>
-    <div class="pull-left info">
-                                <p>@User.Identity.GetUserName()</p>
-        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-    </div>
-</div>
+    <section class="sidebar">
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img src="~/Images/account.jpeg" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+                <p>@User.Identity.GetUserName()</p>
+                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
+        </div>
 
-<ul class="sidebar-menu">
-<li class="header">MAIN NAVIGATION</li>
-<li id="left-sidebar-menu-dashboard" class="treeview">
-    <a href="@Url.Action("Dashboard", "Account")">
-        <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
-    </a>
- 
-</li>
+        <ul class="sidebar-menu">
+            <li class="header">MAIN NAVIGATION</li>
+            <li id="left-sidebar-menu-dashboard" class="treeview">
+                <a href="@Url.Action("Dashboard", "Account")">
+                    <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+                </a>
 
-<li id="left-sidebar-menu-charts" class="treeview">
-    <a href="#">
-        <i class="fa fa-calculator"></i>
-        <span>Calculators</span>
-        <i class="fa fa-angle-left pull-right"></i>
-    </a>
-    <ul class="treeview-menu">
-        <li id="left-sidebar-menu-charts-BMI">
-            <a href="@Url.Action("BMI", "Calculators")"><i class="fa fa-heartbeat"></i> BMI Calculator</a>
-        </li>
-        <li id="left-sidebar-menu-charts-WHR">
-            <a href="@Url.Action("WHR", "Calculators")"><i class="fa fa-heartbeat"></i> WHR  Calculator</a>
-        </li>
-        <li id="left-sidebar-menu-charts-SBW">
-            <a href="@Url.Action("SBW", "Calculators")"><i class="fa fa-heartbeat"></i> Should Body Weight</a>
-        </li>
-        <li id="left-sidebar-menu-charts-BM">
-            <a href="@Url.Action("BM", "Calculators")"><i class="fa fa-heartbeat"></i> Basic Metabolism</a>
-        </li>
-        <li id="left-sidebar-menu-charts-PBF">
-            <a href="@Url.Action("PBF", "Calculators")"><i class="fa fa-heartbeat"></i> Percentage Body Fat</a>
-        </li>
-    </ul>
-</li>
-<li id="left-sidebar-menu-elements" class="treeview">
-    <a href="#">
-        <i class="fa fa-cutlery"></i>
-        <span>Diet</span>
-        <i class="fa fa-angle-left pull-right"></i>
-    </a>
-    <ul class="treeview-menu">
-        <li id="left-sidebar-menu-elements-general">
-            <a href="@Url.Action("ProductList", "Diet")"><i class="fa fa-circle-o"></i> List of products</a>
-        </li>
-        <li id="left-sidebar-menu-elements-icons">
-            <a href="@Url.Action("AddProduct", "Diet")"><i class="fa fa-circle-o"></i> Add a product</a>
-        </li>
-        <li id="left-sidebar-menu-elements-buttons">
-            <a href="@Url.Action("CreateDiet", "Diet")"><i class="fa fa-circle-o"></i> Create Diet</a>
-        </li>
-        <li id="left-sidebar-menu-elements-sliders">
-            <a href="@Url.Action("Index", "Home")"><i class="fa fa-circle-o"></i> Sample DietView</a>
-        </li>
-       
-    </ul>
-
-</li>
-    <li id="left-sidebar-menu-elements3" class="treeview">
-        <a href="#">
-            <i class="fa fa-cutlery"></i>
-            <span>Training</span>
-            <i class="fa fa-angle-left pull-right"></i>
-        </a>
-        <ul class="treeview-menu">
-            <li id="left-sidebar-menu-elements-general2">
-                <a href="@Url.Action("TrainingList", "Training")"><i class="fa fa-circle-o"></i> List of traimimg</a>
-            </li>
-            <li id="left-sidebar-menu-elements-icons2">
-                <a href="@Url.Action("AddTraining", "Training")"><i class="fa fa-circle-o"></i> Add an excercise</a>
-            </li>
-            <li id="left-sidebar-menu-elements-buttons2">
-                <a href="@Url.Action("CreateDiet", "Training")"><i class="fa fa-circle-o"></i> Create Diet</a>
-            </li>
-            <li id="left-sidebar-menu-elements-sliders2">
-                <a href="@Url.Action("Index", "Training")"><i class="fa fa-circle-o"></i> Sample DietView</a>
             </li>
 
+            <li id="left-sidebar-menu-charts" class="treeview">
+                <a href="#">
+                    <i class="fa fa-calculator"></i>
+                    <span>Calculators</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li id="left-sidebar-menu-charts-BMI">
+                        <a href="@Url.Action("BMI", "Calculators")"><i class="fa fa-heartbeat"></i> BMI Calculator</a>
+                    </li>
+                    <li id="left-sidebar-menu-charts-WHR">
+                        <a href="@Url.Action("WHR", "Calculators")"><i class="fa fa-heartbeat"></i> WHR Calculator</a>
+                    </li>
+                    <li id="left-sidebar-menu-charts-SBW">
+                        <a href="@Url.Action("SBW", "Calculators")"><i class="fa fa-heartbeat"></i> Should Body Weight</a>
+                    </li>
+                    <li id="left-sidebar-menu-charts-BM">
+                        <a href="@Url.Action("BM", "Calculators")"><i class="fa fa-heartbeat"></i> Basic Metabolism</a>
+                    </li>
+                    <li id="left-sidebar-menu-charts-PBF">
+                        <a href="@Url.Action("PBF", "Calculators")"><i class="fa fa-heartbeat"></i> Percentage Body Fat</a>
+                    </li>
+                </ul>
+            </li>
+            <li id="left-sidebar-menu-elements" class="treeview">
+                <a href="#">
+                    <i class="fa fa-cutlery"></i>
+                    <span>Diet</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li id="left-sidebar-menu-elements-general">
+                        <a href="@Url.Action("ProductList", "Diet")"><i class="fa fa-circle-o"></i> List of products</a>
+                    </li>
+                    @if (@User.IsInRole("Admin"))
+                    {
+                        <li id="left-sidebar-menu-elements-icons">
+                            <a href="@Url.Action("AddProduct", "Diet")"><i class="fa fa-circle-o"></i> Add a product</a>
+                        </li>
+                    }
+                    <li id="left-sidebar-menu-elements-buttons">
+                        <a href="@Url.Action("CreateDiet", "Diet")"><i class="fa fa-circle-o"></i> Create Diet</a>
+                    </li>
+                    <li id="left-sidebar-menu-elements-sliders">
+                        <a href="@Url.Action("Index", "Home")"><i class="fa fa-circle-o"></i> Sample DietView</a>
+                    </li>
+
+                </ul>
+
+            </li>
+            <li id="left-sidebar-menu-elements3" class="treeview">
+                <a href="#">
+                    <i class="fa fa-cutlery"></i>
+                    <span>Training</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li id="left-sidebar-menu-elements-general2">
+                        <a href="@Url.Action("ExcerciseList", "Training")"><i class="fa fa-circle-o"></i> List of traimimg</a>
+                    </li>
+                    @if (@User.IsInRole("Admin"))
+                    {
+                        <li id="left-sidebar-menu-elements-icons2">
+                            <a href="@Url.Action("AddTraining", "Training")"><i class="fa fa-circle-o"></i> Add an excercise</a>
+                        </li>
+                    }
+                    <li id="left-sidebar-menu-elements-buttons2">
+                        <a href="@Url.Action("CreateDiet", "Training")"><i class="fa fa-circle-o"></i> Create Diet</a>
+                    </li>
+                    <li id="left-sidebar-menu-elements-sliders2">
+                        <a href="@Url.Action("Index", "Training")"><i class="fa fa-circle-o"></i> Sample DietView</a>
+                    </li>
+
+                </ul>
+
+            </li>
         </ul>
-
-    </li>
-</ul>
-</section>
+    </section>
 </aside>
 <div class="content-wrapper">
     <section class="content-header">
@@ -148,7 +154,7 @@
     <div class="pull-right hidden-xs">
         <b>Version</b> 0.8.1
     </div>
-    <strong>Copyrights | eTrener  | 2017 <a href="http://mateusz-szopa.pl">Mateusz Szopa</a>.</strong> All rights
+    <strong>Copyrights | eTrener | 2017 <a href="http://mateusz-szopa.pl">Mateusz Szopa</a>.</strong> All rights
     reserved.
 </footer>
 <aside class="control-sidebar control-sidebar-dark">
