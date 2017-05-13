@@ -1,5 +1,3 @@
-using eTrener.Infrastructure;
-
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(eTrener.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(eTrener.App_Start.NinjectWebCommon), "Stop")]
 
@@ -63,8 +61,6 @@ namespace eTrener.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<ISessionMenager>().To<SessionMenager>();
-
-        }
+        }        
     }
 }

@@ -120,12 +120,9 @@
                         </li>
                     }
                     <li id="left-sidebar-menu-elements-buttons2">
-                        <a href="@Url.Action("CreateDiet", "Training")"><i class="fa fa-circle-o"></i> Create Diet</a>
+                        <a href="@Url.Action("CreateTraining", "Training")"><i class="fa fa-circle-o"></i> Create training plan</a>
                     </li>
-                    <li id="left-sidebar-menu-elements-sliders2">
-                        <a href="@Url.Action("Index", "Training")"><i class="fa fa-circle-o"></i> Sample DietView</a>
-                    </li>
-
+       
                 </ul>
 
             </li>
@@ -133,19 +130,18 @@
             <li id="left-sidebar-menu-elements4" class="treeview">
                 <a href="#">
                     <i class="fa fa-cutlery"></i>
-                    <span>Training</span>
+                    <span>Excercise log</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
                     <li id="left-sidebar-menu-elements-general4">
-                        <a href="@Url.Action("AddExcercise", "Log")"><i class="fa fa-circle-o"></i> List of traimimg</a>
+                        <a href="@Url.Action("AddExcercise", "Log")"><i class="fa fa-circle-o"></i> Add an excercise</a>
                     </li>
-                    @if (@User.IsInRole("Admin"))
-                    {
-                        <li id="left-sidebar-menu-elements-icons2">
-                            <a href="@Url.Action("ShowLog", "Log")"><i class="fa fa-circle-o"></i> Add an excercise</a>
+             
+                        <li id="left-sidebar-menu-elements-icons4">
+                            <a href="@Url.Action("ShowLog", "Log")"><i class="fa fa-circle-o"></i> Show your training history</a>
                         </li>
-                    }
+                    
                    
 
                 </ul>

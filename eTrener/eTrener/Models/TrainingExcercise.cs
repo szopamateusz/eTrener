@@ -10,15 +10,12 @@ namespace eTrener.Models
     {
         [Key]
         public int TrainingElementId { get; set; }
-        //   public int TrainingId { get; set; }
         public DateTime TrainingTime { get; set; }
-        public int ExcerciseId { get; set; }
+        public string ExcerciseName { get; set; }
         public int SeriesNumber { get; set; }
         public int Repetition { get; set; }
         public double Weight { get; set; }
-
-        public virtual Excercise Excercise { get; set; }
-        public virtual TrainigLog Log { get; set; }
-
+        public string UserId { get; set; }
+        public virtual IdentityModels.ApplicationUser User { get; set; }
     }
 }
