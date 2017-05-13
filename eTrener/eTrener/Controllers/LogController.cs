@@ -16,32 +16,48 @@ namespace eTrener.Controllers
         // GET: Log
         public ActionResult AddExcercise()
         {
-            IEnumerable<SelectListItem> items = db.Excercise.Select(c => new SelectListItem
+            TrainingExcercise excercise = new TrainingExcercise();
+            excercise.ExcerciseNames = Excercises();
+            return View(excercise);
+        }
+
+        private static List<SelectListItem> Excercises()
+        {
+            eTrenerContext db=new eTrenerContext();
+            List<SelectListItem> items = new List<SelectListItem>(db.Excercise.Select(c => new SelectListItem
             {
                 Value = c.Name,
                 Text = c.Name
-            });
-            ViewBag.Excercises = items;
-
-            return View();
+            }));
+            return items;
         }
 
         [HttpPost]
         public ActionResult AddExcercise(TrainingExcercise model)
         {
+
             var userId = User.Identity.GetUserId();
-            TrainingExcercise excercise = new TrainingExcercise()
+            try
             {
-                TrainingElementId = model.TrainingElementId,
-                ExcerciseName = model.ExcerciseName,
-                SeriesNumber = model.SeriesNumber,
-                Repetition = model.Repetition,
-                TrainingTime = model.TrainingTime,
-                Weight = model.Weight,
-                UserId = userId
-            };
-            db.Excercises.Add(excercise);
-            db.SaveChanges();
+                TrainingExcercise excercise = new TrainingExcercise()
+                {
+                    TrainingElementId = model.TrainingElementId,
+                    ExcerciseName = model.ExcerciseName,
+                    SeriesNumber = model.SeriesNumber,
+                    Repetition = model.Repetition,
+                    TrainingTime = model.TrainingTime,
+                    Weight = model.Weight,
+                    UserId = userId
+                };
+                db.Excercises.Add(excercise);
+                db.SaveChanges();
+                
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = "Incorrect data";
+            }
+
             return RedirectToAction("AddExcercise", "Log");
         }
 
