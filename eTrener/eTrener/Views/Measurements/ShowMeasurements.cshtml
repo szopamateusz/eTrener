@@ -1,0 +1,44 @@
+﻿@model IEnumerable<eTrener.Models.BodyMeasurements>
+
+@{
+    ViewBag.Title = "Your measurements";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/table.css" rel="stylesheet" />
+
+<table>
+    <thead>
+    <tr>
+        <th>Date</th>
+        <th>Weight</th>
+        <th>Biceps</th>
+        <th>Calf</th>
+        <th>Chest</th>
+        <th>Forearm</th>
+        <th>Hip</th>
+        <th>Neck</th>
+        <th>Thigh</th>
+        <th>Waist</th>
+        <th>Wrist</th>
+   </tr>
+    </thead>
+    <tbody>
+    @foreach (var position in Model)
+    {
+        <tr>      
+            <td>@position.TrainingTime</td>
+            <td>@position.Weight</td>
+            <td>@position.Biceps</td>
+            <td>@position.Calf</td>
+            <td>@position.Chest</td>
+            <td>@position.Forearm</td>
+            <td>@position.Hip</td>
+            <td>@position.Neck</td>
+            <td>@position.Thigh</td>
+            <td>@position.Waist</td>
+            <td>@position.Wrist</td>
+        </tr>
+    }
+    
+    </tbody>
+</table>

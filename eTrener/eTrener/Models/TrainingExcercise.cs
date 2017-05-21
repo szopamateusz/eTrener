@@ -12,10 +12,19 @@ namespace eTrener.Models
     {
         [Key]
         public int TrainingElementId { get; set; }
+
+        [NotMapped]
+        public List<SelectListItem> TrainingTimeList { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Enrollment Date")]
         public DateTime TrainingTime { get; set; }
+
         public string ExcerciseName { get; set; }
+
         [NotMapped]
         public List<SelectListItem> ExcerciseNames { get; set; }
+
         public int SeriesNumber { get; set; }
         public int Repetition { get; set; }
         public double Weight { get; set; }

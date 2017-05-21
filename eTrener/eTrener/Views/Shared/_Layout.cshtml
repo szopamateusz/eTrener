@@ -7,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>eTrener</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link href="~/Content/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link href="~/Content/ionicons/css/ionicons.css" rel="stylesheet" />
-    <link href="~/Content/bootstrap.css" rel="stylesheet" />
-    <link href="~/Content/dist/css/admin-lte.css" rel="stylesheet" />
-    <link href="~/Content/dist/css/skins/skin-black-light.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+    <link href="~/Content/ionicons/css/ionicons.css" rel="stylesheet"/>
+    <link href="~/Content/bootstrap.css" rel="stylesheet"/>
+    <link href="~/Content/dist/css/admin-lte.css" rel="stylesheet"/>
+    <link href="~/Content/dist/css/skins/skin-black-light.css" rel="stylesheet"/>
 
 
 </head>
@@ -96,7 +96,7 @@
                     <li id="left-sidebar-menu-elements-buttons">
                         <a href="@Url.Action("CreateDiet", "Diet")"><i class="fa fa-circle-o"></i> Create Diet</a>
                     </li>
-                   
+
 
                 </ul>
 
@@ -127,23 +127,40 @@
                 </ul>
 
             </li>
-            
+
             <li id="left-sidebar-menu-elements4" class="treeview">
                 <a href="#">
-                    <i class="fa fa-cutlery"></i>
-                    <span>Training</span>
-                    <i class="fa fa-angle-left pull-right"></i>
+                    <i class="fa fa-book"></i>
+                    <span>Training log</span>
                 </a>
                 <ul class="treeview-menu">
                     <li id="left-sidebar-menu-elements-general4">
-                        <a href="@Url.Action("AddExcercise", "Log")"><i class="fa fa-circle-o"></i> Add excercise to log</a>
+                        <a href="@Url.Action("AddExcercise", "Log")"><i class="fa fa-pencil-square-o"></i> Add excercise to log</a>
                     </li>
-              
-                        <li id="left-sidebar-menu-elements-icons2">
-                            <a href="@Url.Action("ShowLog", "Log")"><i class="fa fa-circle-o"></i> Show your excercise log</a>
-                        </li>
-                    
-                   
+
+                    <li id="left-sidebar-menu-elements-icons3">
+                        <a href="@Url.Action("ShowLog", "Log")"><i class="fa fa-pencil-square-o"></i> Show your excercise log</a>
+                    </li>
+
+
+                </ul>
+
+            </li>
+            <li id="left-sidebar-menu-elements5" class="treeview">
+                <a href="#">
+                    <i class="fa fa-balance-scale"></i>
+                    <span>Training log</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li id="left-sidebar-menu-elements-general5">
+                        <a href="@Url.Action("AddMeasurements", "Measurements")"><i class="	fa fa-arrows-h"></i> Add measurements</a>
+                    </li>
+
+                    <li id="left-sidebar-menu-elements-icons5">
+                        <a href="@Url.Action("ShowMeasurements", "Measurements")"><i class="	fa fa-arrows-h"></i> Show your measurements</a>
+                    </li>
+
 
                 </ul>
 
@@ -338,13 +355,12 @@
 </div>
 
 
-    <script src="~/Scripts/jQuery-2.1.4.min.js"></script>
-    <script src="~/Scripts/bootstrap.js"></script>
-    <script src="~/Scripts/jquery.slimscroll.js"></script>
-    <script src="~/Scripts/fastclick.js"></script>
-    <script src="~/Scripts/_Layout.js"></script>
-    <script src="~/Content/dist/js/app.js"></script>
-
+<script src="~/Scripts/jQuery-2.1.4.min.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/jquery.slimscroll.js"></script>
+<script src="~/Scripts/fastclick.js"></script>
+<script src="~/Scripts/_Layout.js"></script>
+<script src="~/Content/dist/js/app.js"></script>
 
 
 @RenderSection("menu", required: false)

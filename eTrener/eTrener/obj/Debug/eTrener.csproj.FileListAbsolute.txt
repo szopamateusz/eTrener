@@ -210,3 +210,7 @@ C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.dll
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.pdb
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.Migrations.workOnExcercise.resources
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.Migrations.workOnExcercise2.resources
+C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.Migrations.AddBodyMeasurements.resources
+C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.Migrations.AddBodyMeasurements2.resources
+C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.Migrations.AddBodyMeasurements3.resources
+C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.Migrations.AddBodyMeasurements4.resources

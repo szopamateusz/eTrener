@@ -1,0 +1,129 @@
+﻿@model eTrener.Models.BodyMeasurements
+<link href="~/Content/styles.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "Add your measurements";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+    <div id="container2">
+        <div id="container1">
+            <div id="col1">
+		
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.TrainingTime, htmlAttributes: new {@class = "control-label col-md-2"})
+                            <div class="col-md-5">
+                                @Html.EditorFor(model => model.TrainingTime, new {htmlAttributes = new {@class = "form-control"}})
+                                @Html.ValidationMessageFor(model => model.TrainingTime, "", new {@class = "text-danger"})
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Weight, htmlAttributes: new {@class = "control-label col-md-2"})
+                            <div class="col-md-5">
+                                @Html.EditorFor(model => model.Weight, new {htmlAttributes = new {@class = "form-control"}})
+                                @Html.ValidationMessageFor(model => model.Weight, "", new {@class = "text-danger"})
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Neck, htmlAttributes: new {@class = "control-label col-md-2"})
+                            <div class="col-md-5">
+                                @Html.EditorFor(model => model.Neck, new {htmlAttributes = new {@class = "form-control"}})
+                                @Html.ValidationMessageFor(model => model.Neck, "", new {@class = "text-danger"})
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Chest, htmlAttributes: new {@class = "control-label col-md-2"})
+                            <div class="col-md-5">
+                                @Html.EditorFor(model => model.Chest, new {htmlAttributes = new {@class = "form-control"}})
+                                @Html.ValidationMessageFor(model => model.Chest, "", new {@class = "text-danger"})
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Biceps, htmlAttributes: new {@class = "control-label col-md-2"})
+                            <div class="col-md-5">
+                                @Html.EditorFor(model => model.Biceps, new {htmlAttributes = new {@class = "form-control"}})
+                                @Html.ValidationMessageFor(model => model.Biceps, "", new {@class = "text-danger"})
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Forearm, htmlAttributes: new {@class = "control-label col-md-2"})
+                            <div class="col-md-5">
+                                @Html.EditorFor(model => model.Forearm, new {htmlAttributes = new {@class = "form-control"}})
+                                @Html.ValidationMessageFor(model => model.Forearm, "", new {@class = "text-danger"})
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Waist, htmlAttributes: new {@class = "control-label col-md-2"})
+                            <div class="col-md-5">
+                                @Html.EditorFor(model => model.Waist, new {htmlAttributes = new {@class = "form-control"}})
+                                @Html.ValidationMessageFor(model => model.Waist, "", new {@class = "text-danger"})
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Hip, htmlAttributes: new {@class = "control-label col-md-2"})
+                            <div class="col-md-5">
+                                @Html.EditorFor(model => model.Hip, new {htmlAttributes = new {@class = "form-control"}})
+                                @Html.ValidationMessageFor(model => model.Hip, "", new {@class = "text-danger"})
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Wrist, htmlAttributes: new {@class = "control-label col-md-2"})
+                            <div class="col-md-5">
+                                @Html.EditorFor(model => model.Wrist, new {htmlAttributes = new {@class = "form-control"}})
+                                @Html.ValidationMessageFor(model => model.Wrist, "", new {@class = "text-danger"})
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Thigh, htmlAttributes: new {@class = "control-label col-md-2"})
+                            <div class="col-md-5">
+                                @Html.EditorFor(model => model.Thigh, new {htmlAttributes = new {@class = "form-control"}})
+                                @Html.ValidationMessageFor(model => model.Thigh, "", new {@class = "text-danger"})
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Calf, htmlAttributes: new {@class = "control-label col-md-2"})
+                            <div class="col-md-5">
+                                @Html.EditorFor(model => model.Calf, new {htmlAttributes = new {@class = "form-control"}})
+                                @Html.ValidationMessageFor(model => model.Calf, "", new {@class = "text-danger"})
+                            </div>
+                        </div> 
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-6">
+                                <input type="submit" value="Create" class="btn btn-default"/>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+            <div id="col2">
+                <img src="~/Images/body_measurement.jpg" align="right" />
+
+            </div>
+        </div>
+    </div>
+    
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -32,34 +32,34 @@ namespace eTrener.Controllers
             return items;
         }
 
-        [HttpPost]
-        public ActionResult AddExcercise(TrainingExcercise model)
-        {
-
-            var userId = User.Identity.GetUserId();
-            try
+            [HttpPost]
+            public ActionResult AddExcercise(TrainingExcercise model)
             {
-                TrainingExcercise excercise = new TrainingExcercise()
+
+                var userId = User.Identity.GetUserId();
+                try
                 {
-                    TrainingElementId = model.TrainingElementId,
-                    ExcerciseName = model.ExcerciseName,
-                    SeriesNumber = model.SeriesNumber,
-                    Repetition = model.Repetition,
-                    TrainingTime = model.TrainingTime,
-                    Weight = model.Weight,
-                    UserId = userId
-                };
-                db.Excercises.Add(excercise);
-                db.SaveChanges();
+                    TrainingExcercise excercise = new TrainingExcercise()
+                    {
+                        TrainingElementId = model.TrainingElementId,
+                        ExcerciseName = model.ExcerciseName,
+                        SeriesNumber = model.SeriesNumber,
+                        Repetition = model.Repetition,
+                        TrainingTime = model.TrainingTime,
+                        Weight = model.Weight,
+                        UserId = userId
+                    };
+                    db.Excercises.Add(excercise);
+                    db.SaveChanges();
                 
-            }
-            catch (Exception ex)
-            {
-                ViewBag.Error = "Incorrect data";
-            }
+                }
+                catch (Exception ex)
+                {
+                    ViewBag.Error = "Incorrect data";
+                }
 
-            return RedirectToAction("AddExcercise", "Log");
-        }
+                return RedirectToAction("AddExcercise", "Log");
+            }
 
         public ActionResult ShowLog()
         {
