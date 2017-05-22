@@ -531,9 +531,6 @@
     <Content Include="Views\Diet\select_food.cshtml" />
     <Content Include="Views\Diet\_Data.cshtml" />
     <Content Include="Views\Diet\_Products.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Oferta.cshtml" />
-    <Content Include="Views\Home\Rejestracja.cshtml" />
     <Content Include="Views\Log\AddExcercise.cshtml" />
     <Content Include="Views\Log\ShowLog.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />

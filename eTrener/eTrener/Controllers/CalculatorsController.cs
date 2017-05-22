@@ -11,10 +11,6 @@ namespace eTrener.Controllers
     public class CalculatorsController : Controller
     {
         // GET: Calculators
-        public ActionResult Index()
-        {
-            return View();
-        }
 
         public ActionResult BMI()
         {

@@ -99,7 +99,7 @@ namespace eTrener.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Dashboard", "Account");
         }
 
 
@@ -120,7 +120,7 @@ namespace eTrener.Controllers
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Dashboard", "Account");
                 }
                 AddErrors(result);
             }
@@ -142,7 +142,7 @@ namespace eTrener.Controllers
         {
             var name = User.Identity.Name;
             AuthenticationManager.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Account");
         }
 
         public ActionResult ExternalLoginConfirmation()
@@ -156,7 +156,7 @@ namespace eTrener.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Dashboard", "Account");
             }
 
             if (ModelState.IsValid)

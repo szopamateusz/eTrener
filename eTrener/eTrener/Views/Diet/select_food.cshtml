@@ -1,13 +1,14 @@
-﻿
-@using System.Reflection.Emit
+﻿@using System.Reflection.Emit
 @using System.Web.WebPages.Instrumentation
 @{
-    ViewBag.Title = "select_food";
+
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<link href="~/Content/diet.css" rel="stylesheet" />
+<link href="~/Content/diet.css" rel="stylesheet"/>
 
-<div class="box">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<div class="banner">
     <div class="box-header">
         <h3 class="box-title">Search products</h3>
     </div>
@@ -15,34 +16,31 @@
         <form id="search-form" method="get" data-ajax="true" data-ajax-target="#SekcjaListaKategori">
             <input id="search-filter" type="search" name="searchQuery"
                    data-autocomplete-source="@Url.Action("ProductHints")"
-                   placeholder="Wprowadź tekst, aby wyfiltrować..."/>
+                   placeholder="Insert text to filter..."/>
             <input type="submit" value="Search"/>
         </form>
 
     </div>
-</div>
-
-<div class="col-1">
-    <ul id="matching">
+    <ul class="w3-ul w3-card-4">
         @foreach (var position in Model)
         {
-            <li class="matched-food" id=@position.ProductId.ToString(), meal=@position.Name>
-
-                <a href="@Url.Action("AddMeal", "Diet", new { id =position.ProductId })">@position.Name</a> 
-                <p class="search-nutritional-info">
-
-                    Calories: @position.Calories
+            <li class="w3-hover-red">
+                <img src="https://relatywnieobiektywna.pl/wp-content/uploads/2015/06/chicken.jpg" class="w3-left w3-circle w3-margin-right" style="width:50px">
+                <a href="@Url.Action("AddMeal", "Diet", new {id = position.ProductId})">@position.Name</a> <br/>
+                <span> Calories: @position.Calories
                     Fat: @position.Fat
                     Carbs: @position.Carbs
-                    Protein: @position.Protein
-                </p>
-
+                    Protein: @position.Protein</span>
             </li>
         }
-
+       
     </ul>
-
 </div>
+
+
+
+
+
 
 <script src="~/Scripts/jquery-3.1.1.js"></script>
 <script src="~/Scripts/jquery-ui-1.12.1.js"></script>

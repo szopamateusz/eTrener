@@ -4,26 +4,46 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="~/Content/diet.css" rel="stylesheet" />
+<style>
+    input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
 
+    input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+    div {
+        border-radius: 5px;
+        padding: 20px;
+    }
+</style>
 @using (Html.BeginForm("AddMeal", "Diet", FormMethod.Post, new {role = "form"}))
 {
-    <div id="servings" class="col-1 block-1">
-        <div id="loaded_item">
-
-            <p class="food-description">
-                <label id="name"></label>
-            </p>
-            <div class="user_submitted"></div>
-            <p></p>
-
-            <h3 class="secondary-title">How much?</h3>
+    
+    <div>
+        <form action="/action_page.php">
+            <label for="fname">How much servings of 1g</label>
             @Html.TextBoxFor(m => m.Weight, new { @class = "form-control" })
-            servings of 1 gram
-
-
-            <p></p>
-            <p></p>
-            <h3 class="secondary-title">To which meal?</h3>
+    
+            <label for="country">To which meal?</label>
             @Html.DropDownListFor(m => m.Meal,
                 new List<SelectListItem>
                 {
@@ -32,9 +52,8 @@
                     new SelectListItem {Value = "Dinner", Text = "Dinner"},
                     new SelectListItem {Value = "Snacks", Text = "Snacks"}
                 })
-                
-            <p></p>
-            <input type="submit" value="Add" class="btn btn-default" />
-        </div>
+  
+            <input type="submit" value="Add">
+        </form>
     </div>
 }
