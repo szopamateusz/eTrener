@@ -19,7 +19,7 @@
                 <td>@position.Fat</td>
                 <td>@position.Carbs</td>
                 <td>@position.Protein</td>
-                <td><a class="ion-android-delete" data-id="@position.ProductId" href="#">Delete</a></td>
+                <td>@Html.ActionLink("Delete","DeleteProduct","Diet",new {id=@position.ProductId },null)</td>
             </tr>
         }
 

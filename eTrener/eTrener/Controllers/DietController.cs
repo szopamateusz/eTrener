@@ -155,6 +155,24 @@ namespace eTrener.Controllers
             return View();
         }
 
+        public ActionResult DeleteProduct(int id=0)
+        {
+            var productToDell = db.Products.Find(id);
+
+            if (productToDell == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                db.Products.Remove(productToDell);
+                db.SaveChanges();
+            }
+            return RedirectToAction("ProductList");
+            //return View();
+        }
+        
+
         [HttpPost]
         public async Task<ActionResult> Create(DietViewModel details)
         {

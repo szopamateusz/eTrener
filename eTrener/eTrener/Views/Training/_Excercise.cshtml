@@ -23,7 +23,7 @@
             <td>
                 <a href="javascript:void(0);" class="anchorDetail" data-id="@position.ExcerciseId">Details</a>   
             </td>
-            <td><a class="ion-android-delete" data-id="@position.ExcerciseId" href="#">Delete</a></td>
+            <td><a class="ion-android-delete"></a>@Html.ActionLink("Delete","DeleteExcercise","Training",new{id= position.ExcerciseId },null)</td>
            
         </tr>
     }

@@ -20,6 +20,7 @@
         <th>Thigh</th>
         <th>Waist</th>
         <th>Wrist</th>
+        <th>Delete</th>
    </tr>
     </thead>
     <tbody>
@@ -37,6 +38,8 @@
             <td>@position.Thigh</td>
             <td>@position.Waist</td>
             <td>@position.Wrist</td>
+            <td><a class="ion-android-delete"></a>@Html.ActionLink("Delete", "DeleteMeasurement", "Measurements", new { id = @position.BodyMeasurementdId }, null)</td>
+
         </tr>
     }
     

@@ -542,6 +542,10 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Measurements\AddMeasurements.cshtml" />
     <Content Include="Views\Measurements\ShowMeasurements.cshtml" />
+    <Content Include="Views\Diet\DeleteProduct.cshtml" />
+    <Content Include="Views\Training\DeleteExcercise.cshtml" />
+    <Content Include="Views\Log\DeleteLog.cshtml" />
+    <Content Include="Views\Measurements\DeleteMeasurement.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

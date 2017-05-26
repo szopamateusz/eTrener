@@ -69,5 +69,20 @@ namespace eTrener.Controllers
             return View(bodyMeasurementses);
       
         }
+
+        public ActionResult DeleteMeasurement(int id = 0)
+        {
+            var measurementToDell = db.BodyMeasurementses.Find(id);
+            if (measurementToDell == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                db.BodyMeasurementses.Remove(measurementToDell);
+                db.SaveChanges();
+            }
+            return RedirectToAction("ShowMeasurements");
+        }
     }
 }

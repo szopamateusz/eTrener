@@ -76,5 +76,20 @@ namespace eTrener.Controllers
             }
             return View(trainingExcercises);
         }
+
+        public ActionResult DeleteLog(int id = 0)
+        {
+            var logToDell = db.Excercises.Find(id);
+            if (logToDell == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                db.Excercises.Remove(logToDell);
+                db.SaveChanges();
+            }
+            return RedirectToAction("ShowLog");
+        }
     }
 }

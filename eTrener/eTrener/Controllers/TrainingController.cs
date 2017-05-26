@@ -60,5 +60,21 @@ namespace eTrener.Controllers
             var excercise = db.Excercise.Where(m=>m.ExcerciseId==id).FirstOrDefault();
             return PartialView(excercise);
         }
+
+
+        public ActionResult DeleteExcercise(int id=0)
+        {
+            var excerciseToDell = db.Excercise.Find(id);
+            if (excerciseToDell == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                db.Excercise.Remove(excerciseToDell);
+                db.SaveChanges();
+            }
+           return RedirectToAction("ExcerciseList");
+        }
     }
 }
