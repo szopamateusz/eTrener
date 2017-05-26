@@ -12,5 +12,7 @@ namespace eTrener.Models
         public decimal Carbs { get; set; }
         public decimal Fat { get; set; }
         public decimal Protein { get; set; }
+
+
     }
 }

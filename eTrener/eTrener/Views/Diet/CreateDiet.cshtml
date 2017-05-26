@@ -6,7 +6,7 @@
 @using eTrener.Infrastructure
 @model eTrener.Models.CreateDietModel
 
-<link href="~/Content/diet.css" rel="stylesheet" />
+<link href="~/Content/diet.css" rel="stylesheet"/>
 <table class="table0 " id="diary-table">
 
 <colgroup>
@@ -213,7 +213,7 @@
                         <td>@result</td>
                     }
                     <td>
-                        <a class="ion-android-delete" meal-id="Dinner"  data-id="@position.Model.ProductId" href="#">Delete</a>
+                        <a class="ion-android-delete" meal-id="Dinner" data-id="@position.Model.ProductId" href="#">Delete</a>
                     </td>
                 }
             </tr>
@@ -301,21 +301,21 @@
 
 
 <td>
-    
+
     <span id="calories">@Model.Calories </span>
 </td>
 
 <td>
-   
-    <span id="carbs">@Model.Carbs</span>  
+
+    <span id="carbs">@Model.Carbs</span>
 </td>
 
 <td>
-   
-    <span id="fat">@Model.Fat</span>    
+
+    <span id="fat">@Model.Fat</span>
 </td>
 
-<td>    
+<td>
 
     <span id="proteins">@Model.Protein</span>
 
@@ -330,24 +330,78 @@
     <td class="first">Your Daily Goal </td>
 
 
-    <td>2,770</td>
     <td>
-        <span class="macro-value">346</span>
-        <span class="macro-percentage">
-            50
-        </span>
+
+        @foreach (var position in Model.IngredientModels)
+        {
+            var result = position.RemaindingCalories;
+
+            if (Model.IngredientModels.Count > 1)
+            {
+                @result
+                break;
+            }
+            else
+            {
+                @result
+            }
+        }
     </td>
     <td>
-        <span class="macro-value">92</span>
-        <span class="macro-percentage">
-            30
+        <span class="macro-value">
+            @foreach (var position in Model.IngredientModels)
+            {
+                var result = position.RemaindingCarbs;
+
+                if (Model.IngredientModels.Count > 1)
+                {
+                    @result
+                    break;
+                }
+                else
+                {
+                    @result
+                }
+            }
         </span>
+
     </td>
     <td>
-        <span class="macro-value">139</span>
-        <span class="macro-percentage">
-            20
+        <span class="macro-value">
+            @foreach (var position in Model.IngredientModels)
+            {
+                var result = position.RemaindingFat;
+
+                if (Model.IngredientModels.Count > 1)
+                {
+                    @result
+                    break;
+                }
+                else
+                {
+                    @result
+                }
+            }
         </span>
+
+    </td>
+    <td>
+        <span class="macro-value">
+            @foreach (var position in Model.IngredientModels)
+            {
+                var result = position.RemaindingProtein;
+                if (Model.IngredientModels.Count > 1)
+                {
+                    @result
+                    break;
+                }
+                else
+                {
+                    @result
+                }
+            }
+        </span>
+
     </td>
 
 </tr>
@@ -357,33 +411,83 @@
     <td class="first">Remaining</td>
 
 
-    <td class="positive">2,770</td>
     <td class="positive">
-        <span class="macro-value">346</span>
-        <span class="macro-percentage ">
-            50
-        </span>
+        @foreach (var position in Model.IngredientModels)
+        {
+            var result = 0.0;
+            result = (double) (position.RemaindingCalories - @Model.Calories);
+            if (Model.IngredientModels.Count > 1)
+            {
+                @result
+                break;
+            }
+            else
+            {
+                @result
+            }
+        }
     </td>
     <td class="positive">
-        <span class="macro-value">92</span>
-        <span class="macro-percentage ">
-            30
+        <span class="macro-value">
+            @foreach (var position in Model.IngredientModels)
+            {
+                var result = 0.0;
+                result = (double) (position.RemaindingCarbs - @Model.Carbs);
+                if (Model.IngredientModels.Count > 1)
+                {
+                    @result
+                    break;
+                }
+                else
+                {
+                    @result
+                }
+            }
         </span>
+
     </td>
     <td class="positive">
-        <span class="macro-value">139</span>
-        <span class="macro-percentage ">
-            20
+        <span class="macro-value">
+            @foreach (var position in Model.IngredientModels)
+            {
+                var result = 0.0;
+                result = (double) (position.RemaindingFat - @Model.Fat);
+                if (Model.IngredientModels.Count > 1)
+                {
+                    @result
+                    break;
+                }
+                else
+                {
+                    @result
+                }
+            }
         </span>
+
+    </td>
+    <td class="positive">
+        <span class="macro-value">
+            @foreach (var position in Model.IngredientModels)
+            {
+                var result = 0.0;
+                result = (double) (position.RemaindingProtein - @Model.Protein);
+                if (Model.IngredientModels.Count > 1)
+                {
+                    @result
+                    break;
+                }
+                else
+                {
+                    @result
+                }
+            }
+        </span>
+
     </td>
 
 
 </tr>
-
-
 </tbody>
-
-
 <tfoot>
 
 <tr>
@@ -414,12 +518,10 @@
 
 
 </table>
-<a class="PrzyciskLink" id="koszyk-button-zaplac" href="@Url.Action("Create","Diet")">Create</a>
+@*//<a class="PrzyciskLink" id="koszyk-button-zaplac" href="@Url.Action("Create", "Diet")">Create</a>*@
 
 <script src="~/Scripts/jquery-3.1.1.js"></script>
 <script src="~/Scripts/jquery-3.1.1.min.js"></script>
-<script src="~/Scripts/jquery-ui-1.12.1.js"></script>
-<script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
 
 <script type="text/javascript">
     $(function() {
@@ -431,28 +533,27 @@
             if (recordToDell != '') {
 
                 $.post("/Diet/DeleteFromDiet",
-                    { "ID": recordToDell, "Meal":meal },
+                    { "ID": recordToDell, "Meal": meal },
                     function(response) {
+                        document.location.reload(true);
 
                         $('#proteins').text(response.Protein);
                         $('#calories').text(response.Calories);
                         $('#fat').text(response.Fat);
                         $('#carbs').text(response.Carbs);
-                        if(meal=='Breakfast'){
-                        $('#record-' + recordToDell).fadeOut('slow');
-                        }else if (meal == 'Lunch') {
+                        if (meal == 'Breakfast') {
+                            $('#record-' + recordToDell).fadeOut('slow');
+                        } else if (meal == 'Lunch') {
                             $('#record2-' + recordToDell).fadeOut('slow');
-                        }
-                        else if (meal == 'Dinner') {
+                        } else if (meal == 'Dinner') {
                             $('#record3-' + recordToDell).fadeOut('slow');
-                        }
-                        else if (meal == 'Snacks') {
+                        } else if (meal == 'Snacks') {
                             $('#record4-' + recordToDell).fadeOut('slow');
                         }
                     });
                 return false;
 
             }
-    });
+        });
     });
 </script>

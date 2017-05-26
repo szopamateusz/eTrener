@@ -48,7 +48,7 @@ namespace eTrener.Controllers
             return RedirectToAction("Profile");
         }
         private ApplicationSignInManager _signInManager;
-            private ApplicationUserManager _userManager;
+           private ApplicationUserManager _userManager;
 
             public AdminController()
             {

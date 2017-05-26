@@ -13,9 +13,15 @@ namespace eTrener.Models
         public string Surname { get; set; }
         public int Age { get; set; }
         public string Sex { get; set; }
-        [EmailAddress(ErrorMessage="Wprowadzono błędny adres email.")]
+
+        [EmailAddress(ErrorMessage = "Wprowadzono błędny adres email.")]
         public string Email { get; set; }
+
         [RegularExpression(@"(\+\d{2})*[\d\s-]+", ErrorMessage = "Błędny format numeru telefonu.")]
         public string Phone { get; set; }
+
+        public decimal Weight { get; set; }
+        public decimal Height { get; set; }
+
     }
 }

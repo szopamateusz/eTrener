@@ -214,3 +214,4 @@ C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.Migrations
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.Migrations.AddBodyMeasurements2.resources
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.Migrations.AddBodyMeasurements3.resources
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.Migrations.AddBodyMeasurements4.resources
+C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.Migrations.changeMealModel.resources

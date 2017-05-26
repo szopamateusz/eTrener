@@ -14,6 +14,12 @@ namespace eTrener.Models
         public Product Model { get; set; }
         public int Weight { get; set; }
         public string Meal { get; set; }
-        
+        public decimal RemaindingCalories { get; set; }
+        public decimal RemaindingCarbs { get; set; }
+        public decimal RemaindingFat { get; set; }
+        public decimal RemaindingProtein { get; set; }
+        //public string UserId { get; set; }
+        //public virtual IdentityModels.ApplicationUser User { get; set; }
+
     }
 }

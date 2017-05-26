@@ -49,6 +49,7 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
     </Reference>
@@ -247,6 +248,10 @@
     <Compile Include="Migrations\201705211817428_AddBodyMeasurements4.cs" />
     <Compile Include="Migrations\201705211817428_AddBodyMeasurements4.Designer.cs">
       <DependentUpon>201705211817428_AddBodyMeasurements4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705261358094_changeMealModel.cs" />
+    <Compile Include="Migrations\201705261358094_changeMealModel.Designer.cs">
+      <DependentUpon>201705261358094_changeMealModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModel.cs" />
@@ -583,6 +588,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705211817428_AddBodyMeasurements4.resx">
       <DependentUpon>201705211817428_AddBodyMeasurements4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705261358094_changeMealModel.resx">
+      <DependentUpon>201705261358094_changeMealModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

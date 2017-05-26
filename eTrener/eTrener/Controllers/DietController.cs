@@ -10,7 +10,9 @@ using eTrener.Infrastructure;
 using eTrener.Models;
 using eTrener.ViewModels;
 using System.Threading.Tasks;
+using eTrener.App_Start;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace eTrener.Controllers
 {
@@ -119,16 +121,44 @@ namespace eTrener.Controllers
             }
             return View(productList);
         }
-
+        private ApplicationSignInManager _signInManager;
+        private ApplicationUserManager _userManager;
         [HttpPost]
-        public ActionResult AddMeal(int id, SelectedFoodModel model)
+        public async Task<ActionResult> AddMeal(int id, SelectedFoodModel model)
         {
             var weight = model.Weight;
             string meal = model.Meal;
-            mealMenager.AddMeal(id, weight, meal);
+            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+            var userWeight = user.UserData.Weight;
+            var userHeight = user.UserData.Height;
+            var userAge = user.UserData.Age;
+            var userSex = user.UserData.Sex;
+            mealMenager.AddMeal(id, weight, meal, userWeight, userHeight,userAge,userSex);
             return RedirectToAction("CreateDiet");
         }
+        public ApplicationSignInManager SignInManager
+        {
+            get
+            {
+                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+            }
+            private set
+            {
+                _signInManager = value;
+            }
+        }
 
+        public ApplicationUserManager UserManager
+        {
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
+            }
+        }
         public ActionResult AddMeal(int id)
         {
             return View();

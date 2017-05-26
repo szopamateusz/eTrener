@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using eTrener.DAL;
 using eTrener.Models;
+using Microsoft.AspNet.Identity;
 
 namespace eTrener.Infrastructure
 {
@@ -35,17 +36,32 @@ namespace eTrener.Infrastructure
             return ingredient;
         }
        // , decimal weight, string units, string meal
-        public void AddMeal(int productId, int weight, string meal)
+        public void AddMeal(int productId, int weight, string meal,decimal userWeight,decimal userHeight,int userAge,string userSex)
         {
             var ingredient = DownloadIngredient();
             var addingMeal = db.Products.Where(k => k.ProductId == productId).SingleOrDefault();
+            var result=0.0;
+            if (userSex.Equals("Male"))
+            {
+                 result = 66.47 + 13.75 * (double)userWeight + 5.033 * (double)userHeight - 6.75 * userAge + 400;
+
+            }
+            else
+            {
+                 result = 655.09 + 9.56 * (double)userWeight + 1.84 * (double)userHeight - 4.67 * userAge + 400;
+
+            }
             if (addingMeal != null)
             {
                 var newMeal = new IngredientModel()
                 {
                     Model = addingMeal,
                     Weight = weight,
-                    Meal = meal
+                    Meal = meal,
+                    RemaindingCalories = (decimal)result,
+                    RemaindingCarbs = (decimal)(0.5*result),
+                    RemaindingProtein = (decimal)(0.2 * result),
+                    RemaindingFat = (decimal)(0.3 * result)
                 };
                 ingredient.Add(newMeal);
             }
