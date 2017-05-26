@@ -1,8 +1,10 @@
 ﻿@using System.Data.Entity
-@model IEnumerable<eTrener.Models.TrainingExcercise>
+@*@model IEnumerable<eTrener.Models.TrainingExcercise>*@
+@model PagedList.IPagedList<eTrener.Models.TrainingExcercise>
+@using PagedList.Mvc;
 
 @{
-    ViewBag.Title = "ShowLog";
+    ViewBag.Title = "List of Your last results";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -10,9 +12,12 @@
 <link href="~/Content/Table/component.css" rel="stylesheet"/>
 <link href="~/Content/Table/demo.css" rel="stylesheet"/>
 <link href="~/Content/Table/normalize.css" rel="stylesheet"/>
-
-<div class="container">
-    <table>
+@using (Html.BeginForm("Export", "Log", FormMethod.Post))
+{
+    <button type="submit" id="btnSubmit" class="button save"> Export to Excel</button>
+}
+<div id="Grid" class="container">
+    <table >
         <thead>
         <tr>
             <th>Training date</th>
@@ -26,22 +31,33 @@
         <tbody>
         @foreach (var position in Model)
         {
-            <tr>      
+            <tr>
                 <td>@position.TrainingTime</td>
                 <td>@position.ExcerciseName</td>
                 <td>@position.SeriesNumber</td>
                 <td>@position.Repetition</td>
                 <td>@position.Weight</td>
-                <td><a class="ion-android-delete"></a>@Html.ActionLink("Delete","DeleteLog","Log",new{id= @position.TrainingElementId },null)</td>
-                
+                <td>
+                    <a class="ion-android-delete"></a>@Html.ActionLink("Delete", "DeleteLog", "Log", new {id = @position.TrainingElementId}, null)</td>
+
             </tr>
         }
         </tbody>
     </table>
-    <script type="text/javascript" src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
-      
+    <div class="box-body">
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("ShowLog",
+            new {page}))
+    </div>
 </div>
+
+<link href="~/Content/buttons.css" rel="stylesheet"/>
+<script type="text/javascript" src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
 <script src="~/Scripts/jquery.stickyheader.js"></script>

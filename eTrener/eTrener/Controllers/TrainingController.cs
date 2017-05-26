@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using eTrener.DAL;
 using eTrener.Models;
+using PagedList;
 
 namespace eTrener.Controllers
 {
@@ -35,15 +36,16 @@ namespace eTrener.Controllers
             return RedirectToAction("AddTraining", "Training");
         }
 
-        public ActionResult ExcerciseList(string query)
+        public ActionResult ExcerciseList(int? page,string query)
         {
             var excerciseList = db.Excercise.Where(a => (query == null|| a.Name.ToLower().Contains(query.ToLower()))).ToList();
-
+            int pageSize = 8;
+            int pageNumber = (page ?? 1);
             if (Request.IsAjaxRequest())
             {
-                return PartialView("_Excercise", excerciseList);
+                return PartialView("_Excercise", excerciseList.ToPagedList(pageNumber, pageSize));
             }
-            return View(excerciseList);
+            return View(excerciseList.ToPagedList(pageNumber,pageSize));
         }
 
         public ActionResult ProductHints(string term)

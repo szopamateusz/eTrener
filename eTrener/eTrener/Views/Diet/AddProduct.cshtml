@@ -1,33 +1,34 @@
 ﻿@model eTrener.Models.Product
 
 @{
-    ViewBag.Title = "AddProduct";
+    ViewBag.Title = "Add product to database";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 @using (Html.BeginForm("AddProduct", "Diet", FormMethod.Post, new {role = "form"}))
 {
     <div class="box-body">
     </div>
     <div class="box-body">
         <div class="form-group">
-            @Html.LabelFor(m => m.Name, new {@class = "col0md-2 control-label"})
-            <div class="col-md-12">
+            @Html.LabelFor(m => m.Name, new {@class = "col-md-2 control-label"})
+            <div class="col-md-8">
                 @Html.TextBoxFor(m => m.Name, new {@class = "form-control"})
             </div>
         </div>
     </div>
     <div class="box-body">
         <div class="form-group">
-            @Html.LabelFor(m => m.Calories, new {@class = "col0md-2 control-label"})
-            <div class="col-md-12">
+            @Html.LabelFor(m => m.Calories, new {@class = "col-md-2 control-label"})
+            <div class="col-md-8">
                 @Html.TextBoxFor(m => m.Calories, new {@class = "form-control"})
             </div>
         </div>
     </div>
     <div class="box-body">
         <div class="form-group">
-            @Html.LabelFor(m => m.Fat, new {@class = "col0md-2 control-label"})
-            <div class="col-md-12">
+            @Html.LabelFor(m => m.Fat, new {@class = "col-md-2 control-label"})
+            <div class="col-md-8">
                 @Html.TextBoxFor(m => m.Fat, new {@class = "form-control"})
             </div>
         </div>
@@ -35,8 +36,8 @@
 
     <div class="box-body">
         <div class="form-group">
-            @Html.LabelFor(m => m.Carbs, new {@class = "col0md-2 control-label"})
-            <div class="col-md-12">
+            @Html.LabelFor(m => m.Carbs, new {@class = "col-md-2 control-label"})
+            <div class="col-md-8">
                 @Html.TextBoxFor(m => m.Carbs, new {@class = "form-control"})
             </div>
         </div>
@@ -45,16 +46,16 @@
 
     <div class="box-body">
         <div class="form-group">
-            @Html.LabelFor(m => m.Protein, new {@class = "col0md-2 control-label"})
-            <div class="col-md-12">
+            @Html.LabelFor(m => m.Protein, new {@class = "col-md-2 control-label"})
+            <div class="col-md-8">
                 @Html.TextBoxFor(m => m.Protein, new {@class = "form-control"})
             </div>
         </div>
     </div>
-
+    <link href="~/Content/buttons.css" rel="stylesheet" />
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Add" class="btn btn-default"/>
+            <button type="submit" value="Add" class="button save"> Add </button>
         </div>
     </div>
 }

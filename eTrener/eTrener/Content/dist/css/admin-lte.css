@@ -95,15 +95,15 @@ body {
 }
 .content-wrapper,
 .right-side {
-  min-height: 100%;
-  background-color: #ecf0f5;
-  z-index: 800;
+    min-height: 100%;
+    background-color: #FFFFFF;
+    z-index: 800;
 }
 .main-footer {
   background: #fff;
   padding: 15px;
   color: #444;
-  border-top: 1px solid #d2d6de;
+  border-top: 1px solid #FFFFFF;
 }
 /* Fixed layout */
 .fixed .main-header,

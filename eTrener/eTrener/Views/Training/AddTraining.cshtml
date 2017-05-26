@@ -1,7 +1,7 @@
 ﻿@model eTrener.Models.Excercise
 
 @{
-    ViewBag.Title = "AddTraining";
+    ViewBag.Title = "Add excercise to database";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -13,24 +13,24 @@
     </div>
     <div class="box-body">
         <div class="form-group">
-            @Html.LabelFor(m => m.Name, new { @class = "col0md-2 control-label" })
-            <div class="col-md-12">
+            @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+            <div class="col-md-8">
                 @Html.TextBoxFor(m => m.Name, new { @class = "form-control", style = "width:600px" })
             </div>
         </div>
     </div>
     <div class="box-body">
         <div class="form-group">
-            @Html.LabelFor(m => m.About, new { @class = "col0md-2 control-label" })
-            <div class="col-md-12">
+            @Html.LabelFor(m => m.About, new { @class = "col-md-2 control-label" })
+            <div class="col-md-8">
                 @Html.TextAreaFor(m => m.About, new { @class = "form-control", style = "height:300px;width:600px" })
             </div>
         </div>
     </div>
     <div class="box-body">
         <div class="form-group">
-            @Html.LabelFor(m => m.BodyPart, new { @class = "col0md-2 control-label" })
-            <div class="col-md-12">
+            @Html.LabelFor(m => m.BodyPart, new { @class = "col-md-2 control-label" })
+            <div class="col-md-8">
                 @Html.TextBoxFor(m => m.BodyPart, new { @class = "form-control", style = "width:600px" })
             </div>
         </div>
@@ -38,8 +38,8 @@
 
     <div class="box-body">
         <div class="form-group">
-            @Html.LabelFor(m => m.YtUrl, new { @class = "col0md-2 control-label" })
-            <div class="col-md-12">
+            @Html.LabelFor(m => m.YtUrl, new { @class = "col-md-2 control-label" })
+            <div class="col-md-8">
                 @Html.TextBoxFor(m => m.YtUrl, new { @class = "form-control", style = "width:600px" })
             </div>
         </div>
@@ -47,16 +47,17 @@
 
     <div class="box-body">
         <div class="form-group">
-            @Html.LabelFor(m => m.ImgUrl, new { @class = "col0md-2 control-label" })
-            <div class="col-md-12">
+            @Html.LabelFor(m => m.ImgUrl, new { @class = "col-md-2 control-label" })
+            <div class="col-md-8">
                 @Html.TextBoxFor(m => m.ImgUrl, new { @class = "form-control", style = "width:600px" })
             </div>
         </div>
     </div>
+    <link href="~/Content/buttons.css" rel="stylesheet" />
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Add" class="btn btn-default" />
+            <button type="submit" value="Add" class="button save"> Save </button>
         </div>
     </div>
 }

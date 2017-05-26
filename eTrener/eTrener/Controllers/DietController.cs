@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -13,6 +14,7 @@ using System.Threading.Tasks;
 using eTrener.App_Start;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using PagedList;
 
 namespace eTrener.Controllers
 {
@@ -51,7 +53,7 @@ namespace eTrener.Controllers
             return RedirectToAction("AddProduct", "Diet");
         }
 
-        public ActionResult ProductList(string searchQuery = null)
+        public ActionResult ProductList(int? page,string searchQuery = null )
         {
             List<Product> productList;
             //  ICacheProvider cache = new CacheProvider();
@@ -66,11 +68,13 @@ namespace eTrener.Controllers
             )).ToList();
             //      cache.Set(Consts.ProductList, productList, 10);
             //    }
+            int pageSize = 8;
+            int pageNumber = (page ?? 1);
             if (Request.IsAjaxRequest())
             {
-                return PartialView("_Products", productList);
+                return PartialView("_Products", productList.ToPagedList(pageNumber,pageSize));
             }
-            return View(productList);
+            return View(productList.ToPagedList(pageNumber, pageSize));
         }
 
         public ActionResult CreateDiet()
@@ -119,6 +123,7 @@ namespace eTrener.Controllers
             {
                 return PartialView("_Products", productList);
             }
+
             return View(productList);
         }
         private ApplicationSignInManager _signInManager;
@@ -128,12 +133,22 @@ namespace eTrener.Controllers
         {
             var weight = model.Weight;
             string meal = model.Meal;
-            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
-            var userWeight = user.UserData.Weight;
-            var userHeight = user.UserData.Height;
-            var userAge = user.UserData.Age;
-            var userSex = user.UserData.Sex;
-            mealMenager.AddMeal(id, weight, meal, userWeight, userHeight,userAge,userSex);
+            
+            try
+            {
+                var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+                var userWeight = user.UserData.Weight;
+                var userHeight = user.UserData.Height;
+                var userAge = user.UserData.Age;
+                var userSex = user.UserData.Sex;
+                mealMenager.AddMeal(id, weight, meal, userWeight, userHeight, userAge, userSex);
+
+            }
+            catch (Exception ex)
+            {
+                return HttpNotFound();
+            }
+    
             return RedirectToAction("CreateDiet");
         }
         public ApplicationSignInManager SignInManager
@@ -214,5 +229,6 @@ namespace eTrener.Controllers
 
             return RedirectToAction("CreateDiet");
         }
+
     }
 }

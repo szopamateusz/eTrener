@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using eTrener.DAL;
 using eTrener.Models;
 using Microsoft.AspNet.Identity;
+using PagedList;
 
 namespace eTrener.Controllers
 {
@@ -53,7 +54,7 @@ namespace eTrener.Controllers
 
             return RedirectToAction("AddMeasurements", "Measurements");
         }
-        public ActionResult ShowMeasurements()
+        public ActionResult ShowMeasurements(int? page)
         {
             bool isAdmin = User.IsInRole("Admin");
             IEnumerable<BodyMeasurements> bodyMeasurementses;
@@ -66,7 +67,9 @@ namespace eTrener.Controllers
                 var userId = User.Identity.GetUserId();
                 bodyMeasurementses = db.BodyMeasurementses.Where(o => o.UserId == userId).OrderByDescending(o => o.TrainingTime).ToArray();
             }
-            return View(bodyMeasurementses);
+            int pageSize = 8;
+            int pageNumber = (page ?? 1);
+            return View(bodyMeasurementses.ToPagedList(pageNumber,pageSize));
       
         }
 

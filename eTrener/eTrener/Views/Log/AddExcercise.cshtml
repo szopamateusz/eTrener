@@ -2,12 +2,14 @@
 @model eTrener.Models.TrainingExcercise
 
 @{
-    ViewBag.Title = "AddExcercise";
+    ViewBag.Title = "Add excercise to database";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @using (Html.BeginForm("AddExcercise", "Log", FormMethod.Post, new { role = "form" }))
 {
+    <link href="~/Content/buttons.css" rel="stylesheet" />
+
     @Html.AntiForgeryToken()
     
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -58,7 +60,8 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                
+                <button type="submit" value="Add" class="button save"> Add</button>
                 @ViewBag.Error
             </div>
         </div>

@@ -120,7 +120,7 @@ namespace eTrener.Controllers
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-                    return RedirectToAction("Dashboard", "Account");
+                    return RedirectToAction("UserData", "Admin");
                 }
                 AddErrors(result);
             }

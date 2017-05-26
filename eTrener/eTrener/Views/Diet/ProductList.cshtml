@@ -1,6 +1,8 @@
-﻿
+﻿@model PagedList.IPagedList<eTrener.Models.Product>
+@using PagedList.Mvc;
+
 @{
-    ViewBag.Title = "ProductList";
+    ViewBag.Title = "List of products";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -14,10 +16,17 @@
             <form id="search-form" method="get" data-ajax="true" data-ajax-target="#SekcjaListaKategori">
                 <input id="search-filter" type="search" name="searchQuery"
                        data-autocomplete-source="@Url.Action("ProductHints")"
-                       placeholder="Wprowadź tekst, aby wyfiltrować..." />
-                <input type="submit" value="" />
+                />
+                <input type="submit" value="Find" />
             </form>
             @Html.Partial("_Products")
+           
+        </div>
+        <div class="box-body">
+            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+            @Html.PagedListPager(Model, page => Url.Action("ProductList", 
+                new { page}))
         </div>
     </div>
 <script src="~/Scripts/jquery-3.1.1.js"></script>

@@ -215,3 +215,14 @@ C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.Migrations
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.Migrations.AddBodyMeasurements3.resources
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.Migrations.AddBodyMeasurements4.resources
 C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\obj\Debug\eTrener.Migrations.changeMealModel.resources
+C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\itextsharp.dll
+C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\itextsharp.xmlworker.dll
+C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\itextsharp.xml
+C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\ClosedXML.dll
+C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\DocumentFormat.OpenXml.dll
+C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\ClosedXML.pdb
+C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\ClosedXML.xml
+C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\PagedList.dll
+C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\PagedList.Mvc.dll
+C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\PagedList.xml
+C:\Users\mateu\Source\Repos\eTrener\eTrener\eTrener\bin\PagedList.Mvc.xml

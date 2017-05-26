@@ -1,5 +1,6 @@
-﻿@model IEnumerable<eTrener.Models.BodyMeasurements>
-
+﻿@*@model IEnumerable<eTrener.Models.BodyMeasurements>*@
+@model PagedList.IPagedList<eTrener.Models.BodyMeasurements>
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Your measurements";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -21,7 +22,7 @@
         <th>Waist</th>
         <th>Wrist</th>
         <th>Delete</th>
-   </tr>
+    </tr>
     </thead>
     <tbody>
     @foreach (var position in Model)
@@ -45,3 +46,9 @@
     
     </tbody>
 </table>
+<div class="box-body">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("ShowMeasurements", 
+        new { page}))
+</div>
