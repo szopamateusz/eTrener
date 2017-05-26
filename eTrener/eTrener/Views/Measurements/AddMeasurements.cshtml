@@ -5,9 +5,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-
-
     <div id="container2">
         <div id="container1">
             <div id="col1">
@@ -15,102 +12,110 @@
                 @using (Html.BeginForm())
                 {
                     @Html.AntiForgeryToken()
-                    <div class="form-horizontal">
-                        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+
+                 
+                    <div class="box-body">
                         <div class="form-group">
-                            @Html.LabelFor(model => model.TrainingTime, htmlAttributes: new {@class = "control-label col-md-2"})
-                            <div class="col-md-5">
-                                @Html.EditorFor(model => model.TrainingTime, new {htmlAttributes = new {@class = "form-control"}})
-                                @Html.ValidationMessageFor(model => model.TrainingTime, "", new {@class = "text-danger"})
+                            @Html.LabelFor(m => m.TrainingTime, new {@class = "col-md-2 control-label"})
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.TrainingTime, new { htmlAttributes = new { @class = "form-control" } })
                             </div>
                         </div>
-
+                    </div>
+                    <div class="box-body">
                         <div class="form-group">
-                            @Html.LabelFor(model => model.Weight, htmlAttributes: new {@class = "control-label col-md-2"})
-                            <div class="col-md-5">
-                                @Html.EditorFor(model => model.Weight, new {htmlAttributes = new {@class = "form-control"}})
-                                @Html.ValidationMessageFor(model => model.Weight, "", new {@class = "text-danger"})
+                            @Html.LabelFor(m => m.Weight, new {@class = "col-md-2 control-label"})
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(m => m.Weight, new {@class = "form-control"})
                             </div>
                         </div>
-
+                    </div>
+                    <div class="box-body">
                         <div class="form-group">
-                            @Html.LabelFor(model => model.Neck, htmlAttributes: new {@class = "control-label col-md-2"})
-                            <div class="col-md-5">
-                                @Html.EditorFor(model => model.Neck, new {htmlAttributes = new {@class = "form-control"}})
-                                @Html.ValidationMessageFor(model => model.Neck, "", new {@class = "text-danger"})
+                            @Html.LabelFor(m => m.Neck, new {@class = "col-md-2 control-label"})
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(m => m.Neck, new {@class = "form-control"})
                             </div>
                         </div>
+                    </div>
 
+                    <div class="box-body">
                         <div class="form-group">
-                            @Html.LabelFor(model => model.Chest, htmlAttributes: new {@class = "control-label col-md-2"})
-                            <div class="col-md-5">
-                                @Html.EditorFor(model => model.Chest, new {htmlAttributes = new {@class = "form-control"}})
-                                @Html.ValidationMessageFor(model => model.Chest, "", new {@class = "text-danger"})
+                            @Html.LabelFor(m => m.Chest, new {@class = "col-md-2 control-label"})
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(m => m.Chest, new {@class = "form-control"})
                             </div>
                         </div>
+                    </div>
 
+                    <div class="box-body">
                         <div class="form-group">
-                            @Html.LabelFor(model => model.Biceps, htmlAttributes: new {@class = "control-label col-md-2"})
-                            <div class="col-md-5">
-                                @Html.EditorFor(model => model.Biceps, new {htmlAttributes = new {@class = "form-control"}})
-                                @Html.ValidationMessageFor(model => model.Biceps, "", new {@class = "text-danger"})
+                            @Html.LabelFor(m => m.Biceps, new {@class = "col-md-2 control-label"})
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(m => m.Biceps, new {@class = "form-control"})
                             </div>
                         </div>
+                    </div>
 
-
+                    <div class="box-body">
                         <div class="form-group">
-                            @Html.LabelFor(model => model.Forearm, htmlAttributes: new {@class = "control-label col-md-2"})
-                            <div class="col-md-5">
-                                @Html.EditorFor(model => model.Forearm, new {htmlAttributes = new {@class = "form-control"}})
-                                @Html.ValidationMessageFor(model => model.Forearm, "", new {@class = "text-danger"})
+                            @Html.LabelFor(m => m.Forearm, new {@class = "col-md-2 control-label"})
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(m => m.Forearm, new {@class = "form-control"})
                             </div>
                         </div>
+                    </div>
 
+                    <div class="box-body">
                         <div class="form-group">
-                            @Html.LabelFor(model => model.Waist, htmlAttributes: new {@class = "control-label col-md-2"})
-                            <div class="col-md-5">
-                                @Html.EditorFor(model => model.Waist, new {htmlAttributes = new {@class = "form-control"}})
-                                @Html.ValidationMessageFor(model => model.Waist, "", new {@class = "text-danger"})
+                            @Html.LabelFor(m => m.Waist, new {@class = "col-md-2 control-label"})
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(m => m.Waist, new {@class = "form-control"})
                             </div>
                         </div>
+                    </div>
 
+                    <div class="box-body">
                         <div class="form-group">
-                            @Html.LabelFor(model => model.Hip, htmlAttributes: new {@class = "control-label col-md-2"})
-                            <div class="col-md-5">
-                                @Html.EditorFor(model => model.Hip, new {htmlAttributes = new {@class = "form-control"}})
-                                @Html.ValidationMessageFor(model => model.Hip, "", new {@class = "text-danger"})
+                            @Html.LabelFor(m => m.Hip, new {@class = "col-md-2 control-label"})
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(m => m.Hip, new {@class = "form-control"})
                             </div>
                         </div>
+                    </div>
 
+                    <div class="box-body">
                         <div class="form-group">
-                            @Html.LabelFor(model => model.Wrist, htmlAttributes: new {@class = "control-label col-md-2"})
-                            <div class="col-md-5">
-                                @Html.EditorFor(model => model.Wrist, new {htmlAttributes = new {@class = "form-control"}})
-                                @Html.ValidationMessageFor(model => model.Wrist, "", new {@class = "text-danger"})
+                            @Html.LabelFor(m => m.Wrist, new {@class = "col-md-2 control-label"})
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(m => m.Wrist, new {@class = "form-control"})
                             </div>
                         </div>
+                    </div>
 
+                    <div class="box-body">
                         <div class="form-group">
-                            @Html.LabelFor(model => model.Thigh, htmlAttributes: new {@class = "control-label col-md-2"})
-                            <div class="col-md-5">
-                                @Html.EditorFor(model => model.Thigh, new {htmlAttributes = new {@class = "form-control"}})
-                                @Html.ValidationMessageFor(model => model.Thigh, "", new {@class = "text-danger"})
+                            @Html.LabelFor(m => m.Thigh, new {@class = "col-md-2 control-label"})
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(m => m.Thigh, new {@class = "form-control"})
                             </div>
                         </div>
+                    </div>
 
+                    <div class="box-body">
                         <div class="form-group">
-                            @Html.LabelFor(model => model.Calf, htmlAttributes: new {@class = "control-label col-md-2"})
-                            <div class="col-md-5">
-                                @Html.EditorFor(model => model.Calf, new {htmlAttributes = new {@class = "form-control"}})
-                                @Html.ValidationMessageFor(model => model.Calf, "", new {@class = "text-danger"})
+                            @Html.LabelFor(m => m.Calf, new {@class = "col-md-2 control-label"})
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(m => m.Calf, new {@class = "form-control"})
                             </div>
-                        </div> 
+                        </div>
+                    </div>
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-6">
                                 <input type="submit" value="Create" class="btn btn-default"/>
                             </div>
                         </div>
-                    </div>
+            
                 }
 
             </div>
